@@ -1,0 +1,21 @@
+development:
+  adapter: mysql
+  database: wearingit_dev
+  username: root
+  password:
+  host: localhost
+
+test:
+  adapter: mysql
+  database: wearingit_test
+  username: root
+  password:
+  host: localhost
+  
+production:
+    adapter: mysql
+    socket: /var/run/mysqld/mysqld.sock
+    database: wearingit
+    username: wearingit
+    password: cl0th1ng
+    host: localhost

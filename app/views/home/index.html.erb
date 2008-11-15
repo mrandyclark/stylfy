@@ -1,0 +1,22 @@
+<p>hello, welcome to wearing it.</p>
+
+<div id="latest">
+	<h3>the latest outfits:</h3>
+	<p><img src="/images/outfit1.png"><img src="/images/outfit2.png"><img src="/images/outfit2a.png"></p>
+	<p><img src="/images/outfit2a.png"><img src="/images/outfit1.png"><img src="/images/outfit2.png"></p>
+</div>
+
+<div id="login">
+	<% if current_user %>
+		Hi.
+		<a href="/account">my account</a>
+		<a href="/outfits/list">my outfits</a>
+		<a href="/outfits/new">new outfit</a>
+		<a href="/logout">logout</a>
+	<% else  %>
+		<p>already have an account?  Please <a href="/login">login</a></p>
+		<p>need an account? <a href="/signup">Signup!</a></p>
+	<% end %>
+</div>
+
+<div style="clear:both;"></div>

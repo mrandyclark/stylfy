@@ -1,0 +1,7 @@
+body { background-color: #322c2c; }
+#container { background-color: #fff; width: 860px; margin: 0px auto; padding: 20px;}
+#latest { float: left;}
+
+#latest img { width: 125px; margin: 5px;}
+#login { float: left;}
+
