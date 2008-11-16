@@ -1,0 +1,20 @@
+<h1>Listing outfits</h1>
+
+<table>
+  <tr>
+    <th>Description</th>
+  </tr>
+
+<% for outfit in @outfits %>
+  <tr>
+    <td><%=h outfit.description %></td>
+    <td><%= link_to 'Show', outfit %></td>
+    <td><%= link_to 'Edit', edit_outfit_path(outfit) %></td>
+    <td><%= link_to 'Destroy', outfit, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New outfit', new_outfit_path %>

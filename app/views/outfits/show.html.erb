@@ -1,0 +1,23 @@
+<p>
+  <b>User:</b>
+  <%=h @outfit.user_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @outfit.description %>
+</p>
+
+<p>
+  <b>Likes:</b>
+  <%=h @outfit.likes %>
+</p>
+
+<p>
+  <b>Dislikes:</b>
+  <%=h @outfit.dislikes %>
+</p>
+
+
+<%= link_to 'Edit', edit_outfit_path(@outfit) %> |
+<%= link_to 'Back', outfits_path %>

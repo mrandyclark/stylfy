@@ -1,0 +1,17 @@
+<h1>Editing outfit</h1>
+
+<% form_for(@outfit) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @outfit %> |
+<%= link_to 'Back', outfits_path %>

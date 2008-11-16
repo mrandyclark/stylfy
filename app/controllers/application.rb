@@ -7,8 +7,10 @@ class ApplicationController < ActionController::Base
 
   helper :all # include all helpers, all the time
 
-
   layout "app"
+  
+  require 'rubygems'
+  require 'aws/s3'
   
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store

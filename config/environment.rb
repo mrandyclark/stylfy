@@ -52,6 +52,7 @@ Rails::Initializer.run do |config|
     :secret      => '8861eef3db89c1ad565cd477c6109d5f06f417876c9a730e55f66952637576fa54016685aff7464f6d023c16a5be4881b6751555f716cb2f4dba12fa37b54622'
   }
 
+
   # Use the database for sessions instead of the cookie-based default,
   # which shouldn't be used to store highly confidential information
   # (create the session table with "rake db:sessions:create")
@@ -64,4 +65,5 @@ Rails::Initializer.run do |config|
 
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector
+
 end
