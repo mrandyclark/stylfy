@@ -1,21 +1,13 @@
 <p>
-  <b>User:</b>
-  <%=h @outfit.user_id %>
+	<% for photo in @outfit.photos -%>
+	  <%= link_to image_tag(photo.public_filename(:thumb)), photo.public_filename %>
+	<% end -%>
+
 </p>
 
 <p>
   <b>Description:</b>
   <%=h @outfit.description %>
-</p>
-
-<p>
-  <b>Likes:</b>
-  <%=h @outfit.likes %>
-</p>
-
-<p>
-  <b>Dislikes:</b>
-  <%=h @outfit.dislikes %>
 </p>
 
 

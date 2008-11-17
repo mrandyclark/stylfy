@@ -1,8 +1,8 @@
 class Photo < ActiveRecord::Base
 
   has_attachment :content_type => :image, 
-                   :storage => :file_system, 
-                   :max_size => 1.megabyte,
+                   :storage => :s3, 
+                   :max_size => 1.megabytes,
                    :thumbnails => { :thumb => '150x150>' }
 
   validates_as_attachment
