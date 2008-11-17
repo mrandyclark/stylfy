@@ -1,14 +1,15 @@
 <div id="login">
 	<h1>Log In</h1>
 	<% form_tag session_path do -%>
- 	<div id="login"><%= label_tag 'login' -%>: <%= text_field_tag 'login', @login -%></div>
-	<div id="password"><%= label_tag 'password' -%>: <%= password_field_tag 'password', nil -%></div>
+ 		<div id="login"><%= label_tag 'login' -%>: <%= text_field_tag 'login', @login -%></div>
+		<div id="password"><%= label_tag 'password' -%>: <%= password_field_tag 'password', nil -%></div>
+		<div id="submit"><%= submit_tag 'Log in' %></div>
+	<% end -%>
+</div>
+<br />
+
 
 <!-- Uncomment this if you want this functionality
 <p><%= label_tag 'remember_me', 'Remember me' %>
 <%= check_box_tag 'remember_me', '1', @remember_me %></p>
 -->
-	<div id="submit"><%= submit_tag 'Log in' %></div>
-<% end -%>
-</div>
-<br />
