@@ -1,6 +1,4 @@
-include "ImageScience"
-
-# include Rmagick
+require "ImageScience"
 
 class Photo < ActiveRecord::Base
 
