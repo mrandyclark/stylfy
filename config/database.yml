@@ -15,7 +15,7 @@ test:
 production:
     adapter: mysql
     socket: /var/run/mysqld/mysqld.sock
-    database: wearingit
-    username: wearingit
+    database: stylfy
+    username: stylfy
     password: cl0th1ng
     host: localhost
