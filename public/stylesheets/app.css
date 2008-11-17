@@ -1,7 +1,34 @@
-body { background-color: #322c2c; }
-#container { background-color: #fff; width: 860px; margin: 0px auto; padding: 20px;}
+body { background-color: #523d2d; }
+
 #latest { float: left;}
 
 #latest img { width: 125px; margin: 5px;}
-#login { float: left;}
+#login { float: left; margin: 0px 0px 0px 30px;}
 
+
+
+#logo { width: 750px; margin: 0px auto; }
+
+#container {
+	width: 750px;
+	margin: 0px auto;
+}
+
+#container_top {
+	background-image:url('/images/rounded_top.png');
+	width: 750px;
+	height: 20px;
+	margin: 0px;
+}
+
+#container_bottom {
+	background-image:url('/images/rounded_bottom.png');
+	width: 750px;
+	height: 20px;
+	margin: 0px;}
+
+#container_mid {
+	background-color: #fff;
+	margin: 0px 0px;
+	padding: 0px 10px 0px 10px;
+}

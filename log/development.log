@@ -7963,3 +7963,692 @@ Rendering home/index
   [4;35;1mUser Columns (0.002452)[0m   [0mSHOW FIELDS FROM `users`[0m
   [4;36;1mUser Load (0.000920)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
 Completed in 0.07339 (13 reqs/sec) | Rendering: 0.05441 (74%) | DB: 0.01258 (17%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 12:01:56) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVkNjcyMmZl
+NTgwZDk2N2Q3YzhiNThlMDZhNWM5NGNiNiIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--0409750f42d919ce865bca3c78ac5ada7a4789b3
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mOutfit Load (0.000862)[0m   [0mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 6[0m
+Rendering template within layouts/app
+Rendering home/index
+
+
+ActionView::TemplateError (Input/output error) on line #6 of home/index.html.erb:
+3: <div id="latest">
+4: 	<h3>the latest outfits:</h3>
+5: 	<% for outfit in @latest %>
+6: 		<%= link_to image_tag(outfit.photos.first.public_filename(:thumb)), outfit %>	  
+7: 	<% end %>
+8: </div>
+9: 
+
+    vendor/plugins/attachment_fu/lib/technoweenie/attachment_fu.rb:102:in `write'
+    vendor/plugins/attachment_fu/lib/technoweenie/attachment_fu.rb:102:in `puts'
+    vendor/plugins/attachment_fu/lib/technoweenie/attachment_fu.rb:102:in `has_attachment'
+    app/models/photo.rb:7
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:216:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:216:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:215:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:96:in `require_or_load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:261:in `load_missing_constant'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:468:in `const_missing_not_from_s3_library'
+    /Library/Ruby/Gems/1.8/gems/aws-s3-0.5.1/lib/aws/s3/extensions.rb:174:in `const_missing'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:480:in `const_missing'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:273:in `load_missing_constant'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:484:in `const_missing'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/base.rb:1912:in `compute_type'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/reflection.rb:133:in `send'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/reflection.rb:133:in `klass'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/reflection.rb:141:in `quoted_table_name'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/associations/has_many_association.rb:96:in `construct_sql'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/associations/association_collection.rb:8:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/associations.rb:1135:in `new'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/associations.rb:1135:in `photos'
+    app/views/home/index.html.erb:6:in `_run_erb_47app47views47home47index46html46erb'
+    app/views/home/index.html.erb:5:in `each'
+    app/views/home/index.html.erb:5:in `_run_erb_47app47views47home47index46html46erb'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:342:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:342:in `execute'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/template_handlers/compilable.rb:29:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/template_handlers/compilable.rb:29:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/template.rb:35:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/template.rb:22:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:248:in `render_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1112:in `render_for_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:845:in `render_with_no_layout'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/layout.rb:251:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1161:in `default_render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1167:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:579:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/session_management.rb:130:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:389:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/server.rb:39
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 12:02:01) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVkNjcyMmZl
+NTgwZDk2N2Q3YzhiNThlMDZhNWM5NGNiNiIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--0409750f42d919ce865bca3c78ac5ada7a4789b3
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mOutfit Load (0.001084)[0m   [0;1mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 6[0m
+Rendering template within layouts/app
+Rendering home/index
+
+
+ActionView::TemplateError (Input/output error) on line #6 of home/index.html.erb:
+3: <div id="latest">
+4: 	<h3>the latest outfits:</h3>
+5: 	<% for outfit in @latest %>
+6: 		<%= link_to image_tag(outfit.photos.first.public_filename(:thumb)), outfit %>	  
+7: 	<% end %>
+8: </div>
+9: 
+
+    vendor/plugins/attachment_fu/lib/technoweenie/attachment_fu.rb:102:in `write'
+    vendor/plugins/attachment_fu/lib/technoweenie/attachment_fu.rb:102:in `puts'
+    vendor/plugins/attachment_fu/lib/technoweenie/attachment_fu.rb:102:in `has_attachment'
+    app/models/photo.rb:7
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:216:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:216:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:215:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:96:in `require_or_load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:261:in `load_missing_constant'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:468:in `const_missing_not_from_s3_library'
+    /Library/Ruby/Gems/1.8/gems/aws-s3-0.5.1/lib/aws/s3/extensions.rb:174:in `const_missing'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:480:in `const_missing'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:273:in `load_missing_constant'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:484:in `const_missing'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/base.rb:1912:in `compute_type'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/reflection.rb:133:in `send'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/reflection.rb:133:in `klass'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/reflection.rb:141:in `quoted_table_name'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/associations/has_many_association.rb:96:in `construct_sql'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/associations/association_collection.rb:8:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/associations.rb:1135:in `new'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/associations.rb:1135:in `photos'
+    app/views/home/index.html.erb:6:in `_run_erb_47app47views47home47index46html46erb'
+    app/views/home/index.html.erb:5:in `each'
+    app/views/home/index.html.erb:5:in `_run_erb_47app47views47home47index46html46erb'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:342:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:342:in `execute'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/template_handlers/compilable.rb:29:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/template_handlers/compilable.rb:29:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/template.rb:35:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/template.rb:22:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:248:in `render_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1112:in `render_for_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:845:in `render_with_no_layout'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/layout.rb:251:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1161:in `default_render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1167:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:579:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/session_management.rb:130:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:389:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/server.rb:39
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 12:02:23) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVkNjcyMmZl
+NTgwZDk2N2Q3YzhiNThlMDZhNWM5NGNiNiIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--0409750f42d919ce865bca3c78ac5ada7a4789b3
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mOutfit Load (0.000996)[0m   [0mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 6[0m
+Rendering template within layouts/app
+Rendering home/index
+
+
+ActionView::TemplateError (/Users/mrandyclark/Sites/stylfy/app/models/photo.rb:9: syntax error, unexpected '\n', expecting tASSOC) on line #6 of home/index.html.erb:
+3: <div id="latest">
+4: 	<h3>the latest outfits:</h3>
+5: 	<% for outfit in @latest %>
+6: 		<%= link_to image_tag(outfit.photos.first.public_filename(:thumb)), outfit %>	  
+7: 	<% end %>
+8: </div>
+9: 
+
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:216:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:216:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:215:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:96:in `require_or_load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:261:in `load_missing_constant'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:468:in `const_missing_not_from_s3_library'
+    /Library/Ruby/Gems/1.8/gems/aws-s3-0.5.1/lib/aws/s3/extensions.rb:174:in `const_missing'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:480:in `const_missing'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:273:in `load_missing_constant'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:484:in `const_missing'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/base.rb:1912:in `compute_type'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/reflection.rb:133:in `send'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/reflection.rb:133:in `klass'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/reflection.rb:141:in `quoted_table_name'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/associations/has_many_association.rb:96:in `construct_sql'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/associations/association_collection.rb:8:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/associations.rb:1135:in `new'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/associations.rb:1135:in `photos'
+    app/views/home/index.html.erb:6:in `_run_erb_47app47views47home47index46html46erb'
+    app/views/home/index.html.erb:5:in `each'
+    app/views/home/index.html.erb:5:in `_run_erb_47app47views47home47index46html46erb'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:342:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:342:in `execute'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/template_handlers/compilable.rb:29:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/template_handlers/compilable.rb:29:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/template.rb:35:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/template.rb:22:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_view/base.rb:248:in `render_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1112:in `render_for_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:845:in `render_with_no_layout'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/layout.rb:251:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1161:in `default_render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1167:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:579:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/session_management.rb:130:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:389:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/server.rb:39
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 12:02:33) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVkNjcyMmZl
+NTgwZDk2N2Q3YzhiNThlMDZhNWM5NGNiNiIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--0409750f42d919ce865bca3c78ac5ada7a4789b3
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mOutfit Load (0.000864)[0m   [0;1mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 6[0m
+Rendering template within layouts/app
+Rendering home/index
+  [4;35;1mOutfit Columns (0.002449)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Load (0.000943)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 13) LIMIT 1[0m
+  [4;35;1mPhoto Columns (0.002294)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (0.001255)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 12) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.002181)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) LIMIT 1[0m
+  [4;36;1mPhoto Load (0.000647)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 10) LIMIT 1[0m
+  [4;35;1mUser Columns (0.002183)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.000812)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 0.18046 (5 reqs/sec) | Rendering: 0.16017 (88%) | DB: 0.01363 (7%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 12:04:16) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVkNjcyMmZl
+NTgwZDk2N2Q3YzhiNThlMDZhNWM5NGNiNiIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--0409750f42d919ce865bca3c78ac5ada7a4789b3
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mOutfit Load (0.000850)[0m   [0mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 6[0m
+Rendering template within layouts/app
+Rendering home/index
+  [4;36;1mOutfit Columns (0.002707)[0m   [0;1mSHOW FIELDS FROM `outfits`[0m
+  [4;35;1mPhoto Load (0.000845)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 13) LIMIT 1[0m
+  [4;36;1mPhoto Columns (0.003242)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (0.000876)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 12) LIMIT 1[0m
+  [4;36;1mPhoto Load (0.000693)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.000646)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 10) LIMIT 1[0m
+  [4;36;1mUser Columns (0.002177)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000846)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 0.09983 (10 reqs/sec) | Rendering: 0.07959 (79%) | DB: 0.01288 (12%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 12:04:26) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVkNjcyMmZl
+NTgwZDk2N2Q3YzhiNThlMDZhNWM5NGNiNiIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--0409750f42d919ce865bca3c78ac5ada7a4789b3
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mOutfit Load (0.000872)[0m   [0;1mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 6[0m
+Rendering template within layouts/app
+Rendering home/index
+  [4;35;1mOutfit Columns (0.002077)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Load (0.001472)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 13) LIMIT 1[0m
+  [4;35;1mPhoto Columns (0.002774)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (0.001534)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 12) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.001665)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) LIMIT 1[0m
+  [4;36;1mPhoto Load (0.000678)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 10) LIMIT 1[0m
+  [4;35;1mUser Columns (0.003173)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.001060)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 0.10588 (9 reqs/sec) | Rendering: 0.08427 (79%) | DB: 0.01531 (14%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 12:04:40) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVkNjcyMmZl
+NTgwZDk2N2Q3YzhiNThlMDZhNWM5NGNiNiIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--0409750f42d919ce865bca3c78ac5ada7a4789b3
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mOutfit Load (0.001110)[0m   [0mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 6[0m
+Rendering template within layouts/app
+Rendering home/index
+  [4;36;1mOutfit Columns (0.002264)[0m   [0;1mSHOW FIELDS FROM `outfits`[0m
+  [4;35;1mPhoto Load (0.000809)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 13) LIMIT 1[0m
+  [4;36;1mPhoto Columns (0.002188)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (0.000802)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 12) LIMIT 1[0m
+  [4;36;1mPhoto Load (0.000982)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.000765)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 10) LIMIT 1[0m
+  [4;36;1mUser Columns (0.002097)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000800)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 0.09879 (10 reqs/sec) | Rendering: 0.08083 (81%) | DB: 0.01182 (11%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 12:04:51) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVkNjcyMmZl
+NTgwZDk2N2Q3YzhiNThlMDZhNWM5NGNiNiIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--0409750f42d919ce865bca3c78ac5ada7a4789b3
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mOutfit Load (0.000880)[0m   [0;1mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 6[0m
+Rendering template within layouts/app
+Rendering home/index
+  [4;35;1mOutfit Columns (0.002047)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Load (0.001815)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 13) LIMIT 1[0m
+  [4;35;1mPhoto Columns (0.002419)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (0.001342)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 12) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.000868)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) LIMIT 1[0m
+  [4;36;1mPhoto Load (0.000775)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 10) LIMIT 1[0m
+  [4;35;1mUser Columns (0.003132)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.001017)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 0.19594 (5 reqs/sec) | Rendering: 0.17557 (89%) | DB: 0.01430 (7%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 12:05:01) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVkNjcyMmZl
+NTgwZDk2N2Q3YzhiNThlMDZhNWM5NGNiNiIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--0409750f42d919ce865bca3c78ac5ada7a4789b3
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mOutfit Load (0.000879)[0m   [0mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 6[0m
+Rendering template within layouts/app
+Rendering home/index
+  [4;36;1mOutfit Columns (0.003126)[0m   [0;1mSHOW FIELDS FROM `outfits`[0m
+  [4;35;1mPhoto Load (0.001005)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 13) LIMIT 1[0m
+  [4;36;1mPhoto Columns (0.002126)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (0.000940)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 12) LIMIT 1[0m
+  [4;36;1mPhoto Load (0.001214)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.000676)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 10) LIMIT 1[0m
+  [4;36;1mUser Columns (0.002360)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000795)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 0.10068 (9 reqs/sec) | Rendering: 0.08147 (80%) | DB: 0.01312 (13%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 12:05:20) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVkNjcyMmZl
+NTgwZDk2N2Q3YzhiNThlMDZhNWM5NGNiNiIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--0409750f42d919ce865bca3c78ac5ada7a4789b3
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mOutfit Load (0.000853)[0m   [0;1mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+  [4;35;1mOutfit Columns (0.002360)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Load (0.000936)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 13) LIMIT 1[0m
+  [4;35;1mPhoto Columns (0.002191)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (0.001287)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 12) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.000853)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) LIMIT 1[0m
+  [4;36;1mUser Columns (0.002540)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000983)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 0.10058 (9 reqs/sec) | Rendering: 0.08243 (81%) | DB: 0.01200 (11%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 12:06:38) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVkNjcyMmZl
+NTgwZDk2N2Q3YzhiNThlMDZhNWM5NGNiNiIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--0409750f42d919ce865bca3c78ac5ada7a4789b3
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mOutfit Load (0.000825)[0m   [0;1mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+  [4;35;1mOutfit Columns (0.003378)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Load (0.000865)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 13) LIMIT 1[0m
+  [4;35;1mPhoto Columns (0.002506)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (0.001117)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 12) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.000761)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) LIMIT 1[0m
+  [4;36;1mUser Columns (0.002500)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.001051)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 0.10786 (9 reqs/sec) | Rendering: 0.08820 (81%) | DB: 0.01300 (12%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 12:07:13) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVkNjcyMmZl
+NTgwZDk2N2Q3YzhiNThlMDZhNWM5NGNiNiIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--0409750f42d919ce865bca3c78ac5ada7a4789b3
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mOutfit Load (0.000948)[0m   [0;1mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+  [4;35;1mOutfit Columns (0.002309)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Load (0.000991)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 13) LIMIT 1[0m
+  [4;35;1mPhoto Columns (0.002184)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (0.000854)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 12) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.000790)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) LIMIT 1[0m
+  [4;36;1mUser Columns (0.002431)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000909)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 0.10442 (9 reqs/sec) | Rendering: 0.08708 (83%) | DB: 0.01142 (10%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 12:07:45) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVkNjcyMmZl
+NTgwZDk2N2Q3YzhiNThlMDZhNWM5NGNiNiIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--0409750f42d919ce865bca3c78ac5ada7a4789b3
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mOutfit Load (0.001077)[0m   [0;1mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+  [4;35;1mOutfit Columns (0.002632)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Load (0.000852)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 13) LIMIT 1[0m
+  [4;35;1mPhoto Columns (0.002116)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (0.001367)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 12) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.001353)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) LIMIT 1[0m
+  [4;36;1mUser Columns (0.002462)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.001531)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 0.10733 (9 reqs/sec) | Rendering: 0.08608 (80%) | DB: 0.01339 (12%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 12:08:08) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVkNjcyMmZl
+NTgwZDk2N2Q3YzhiNThlMDZhNWM5NGNiNiIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--0409750f42d919ce865bca3c78ac5ada7a4789b3
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mOutfit Load (0.000799)[0m   [0;1mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+  [4;35;1mOutfit Columns (0.002615)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Load (0.000840)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 13) LIMIT 1[0m
+  [4;35;1mPhoto Columns (0.003038)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (0.001495)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 12) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.001002)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) LIMIT 1[0m
+  [4;36;1mUser Columns (0.002686)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000943)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 0.09980 (10 reqs/sec) | Rendering: 0.08011 (80%) | DB: 0.01342 (13%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 12:08:13) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVkNjcyMmZl
+NTgwZDk2N2Q3YzhiNThlMDZhNWM5NGNiNiIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--0409750f42d919ce865bca3c78ac5ada7a4789b3
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mOutfit Load (0.000848)[0m   [0;1mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+  [4;35;1mOutfit Columns (0.002412)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Load (0.000913)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 13) LIMIT 1[0m
+  [4;35;1mPhoto Columns (0.002256)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (0.000876)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 12) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.001468)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) LIMIT 1[0m
+  [4;36;1mUser Columns (0.002686)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.000994)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 0.19609 (5 reqs/sec) | Rendering: 0.17683 (90%) | DB: 0.01245 (6%) | 200 OK [http://tableapp.dev/]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2008-11-17 12:08:14) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVkNjcyMmZl
+NTgwZDk2N2Q3YzhiNThlMDZhNWM5NGNiNiIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--0409750f42d919ce865bca3c78ac5ada7a4789b3
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Redirected to http://tableapp.dev/
+Completed in 0.10707 (9 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://tableapp.dev/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 12:08:14) [GET]
+  Session ID: BAh7BzoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6
+Rmxhc2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiHllvdSBoYXZlIGJlZW4gbG9n
+Z2VkIG91dC4GOgpAdXNlZHsGOwdG--b8a6dc72ee8a7753af8c50f79154547582d439bd
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mOutfit Load (0.000837)[0m   [0;1mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+  [4;35;1mOutfit Columns (0.002371)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Load (0.000813)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 13) LIMIT 1[0m
+  [4;35;1mPhoto Columns (0.002463)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (0.000921)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 12) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.001697)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) LIMIT 1[0m
+Completed in 0.08992 (11 reqs/sec) | Rendering: 0.07465 (83%) | DB: 0.00910 (10%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 12:08:32) [GET]
+  Session ID: BAh7BzoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6
+Rmxhc2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiHllvdSBoYXZlIGJlZW4gbG9n
+Z2VkIG91dC4GOgpAdXNlZHsGOwdU--b2886b06ab17d4e5d167fd36ac54464f09e506a5
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mOutfit Load (0.001428)[0m   [0;1mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+  [4;35;1mOutfit Columns (0.003016)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Load (0.000842)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 13) LIMIT 1[0m
+  [4;35;1mPhoto Columns (0.002265)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (0.001289)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 12) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.000834)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) LIMIT 1[0m
+Completed in 0.20987 (4 reqs/sec) | Rendering: 0.07854 (37%) | DB: 0.00967 (4%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 12:08:48) [GET]
+  Session ID: BAh7BzoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6
+Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--67c43d00ad8dbfc9b4b926da4047c5b0625641b9
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mOutfit Load (0.001194)[0m   [0;1mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+  [4;35;1mOutfit Columns (0.002213)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Load (0.001107)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 13) LIMIT 1[0m
+  [4;35;1mPhoto Columns (0.002355)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (0.000793)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 12) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.003155)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) LIMIT 1[0m
+Completed in 0.08970 (11 reqs/sec) | Rendering: 0.07191 (80%) | DB: 0.01082 (12%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 12:09:06) [GET]
+  Session ID: BAh7BzoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6
+Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--67c43d00ad8dbfc9b4b926da4047c5b0625641b9
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mOutfit Load (0.000804)[0m   [0;1mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+  [4;35;1mOutfit Columns (0.002400)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Load (0.000946)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 13) LIMIT 1[0m
+  [4;35;1mPhoto Columns (0.002342)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (0.000879)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 12) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.001925)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) LIMIT 1[0m
+Completed in 0.09186 (10 reqs/sec) | Rendering: 0.07652 (83%) | DB: 0.00930 (10%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 12:09:14) [GET]
+  Session ID: BAh7BzoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6
+Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--67c43d00ad8dbfc9b4b926da4047c5b0625641b9
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mOutfit Load (0.001029)[0m   [0;1mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+  [4;35;1mOutfit Columns (0.003620)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Load (0.000925)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 13) LIMIT 1[0m
+  [4;35;1mPhoto Columns (0.002315)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (0.000908)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 12) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.000739)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) LIMIT 1[0m
+Completed in 0.09312 (10 reqs/sec) | Rendering: 0.07528 (80%) | DB: 0.00954 (10%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 12:10:08) [GET]
+  Session ID: BAh7BzoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6
+Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--67c43d00ad8dbfc9b4b926da4047c5b0625641b9
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mOutfit Load (0.001244)[0m   [0;1mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+  [4;35;1mOutfit Columns (0.002904)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Load (0.000919)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 13) LIMIT 1[0m
+  [4;35;1mPhoto Columns (0.001923)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (0.000706)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 12) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.001016)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) LIMIT 1[0m
+Completed in 0.09057 (11 reqs/sec) | Rendering: 0.07568 (83%) | DB: 0.00871 (9%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 12:10:22) [GET]
+  Session ID: BAh7BzoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6
+Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--67c43d00ad8dbfc9b4b926da4047c5b0625641b9
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mOutfit Load (0.000788)[0m   [0;1mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+  [4;35;1mOutfit Columns (0.002092)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Load (0.001512)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 13) LIMIT 1[0m
+  [4;35;1mPhoto Columns (0.002145)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (0.000933)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 12) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.000825)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) LIMIT 1[0m
+Completed in 0.09132 (10 reqs/sec) | Rendering: 0.07690 (84%) | DB: 0.00830 (9%) | 200 OK [http://tableapp.dev/]

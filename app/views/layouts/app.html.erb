@@ -11,10 +11,18 @@
 </head>
 <body>
 
-<div id="container">
-	<h1><a href="/">stylfy</a></h1>
-	<p style="color: green"><%= flash[:notice] %></p>
-	<%= yield  %>
-</div>
+	<div id="logo"><img src="/images/logo.png"></div>
+	<div id="container">
+		<div id="container_top"></div>
+		<div id="container_mid">
+			<div style="color: green"><%= flash[:notice] %></div>
+			<%= yield  %>
+		</div>
+		<div id="container_bottom"></div>
+	</div>
+	
 </body>
 </html>
+
+
+
