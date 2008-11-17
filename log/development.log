@@ -8712,3 +8712,16 @@ Rendering home/index
   [4;36;1mPhoto Load (0.001362)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 12) LIMIT 1[0m
   [4;35;1mPhoto Load (0.000780)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) LIMIT 1[0m
 Completed in 0.09493 (10 reqs/sec) | Rendering: 0.07760 (81%) | DB: 0.00917 (9%) | 200 OK [http://tableapp.dev/]
+
+
+Processing OutfitsController#show (for 127.0.0.1 at 2008-11-17 12:22:24) [GET]
+  Session ID: BAh7BzoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6
+Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--67c43d00ad8dbfc9b4b926da4047c5b0625641b9
+  Parameters: {"action"=>"show", "id"=>"11", "controller"=>"outfits"}
+  [4;36;1mOutfit Columns (0.002446)[0m   [0;1mSHOW FIELDS FROM `outfits`[0m
+  [4;35;1mOutfit Load (0.001507)[0m   [0mSELECT * FROM `outfits` WHERE (`outfits`.`id` = 11) [0m
+Rendering template within layouts/app
+Rendering outfits/show
+  [4;36;1mPhoto Load (0.001054)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) [0m
+  [4;35;1mPhoto Columns (0.002302)[0m   [0mSHOW FIELDS FROM `photos`[0m
+Completed in 0.08708 (11 reqs/sec) | Rendering: 0.07254 (83%) | DB: 0.00731 (8%) | 200 OK [http://tableapp.dev/outfits/11]

@@ -5,7 +5,7 @@ body { background-color: #523d2d; }
 #latest img { width: 125px; margin: 5px;}
 #login { float: left; margin: 0px 0px 0px 30px;}
 
-
+h1, h2, h3, h4, h5, h6, p { margin-top: 0px;}
 
 #logo { width: 750px; margin: 0px auto; }
 #logo img { border: 0px;}
