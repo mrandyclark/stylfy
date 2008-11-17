@@ -1,9 +1,10 @@
-<p>hello, welcome to wearing it.</p>
+<p>hello, welcome to stylfy.</p>
 
 <div id="latest">
 	<h3>the latest outfits:</h3>
-	<p><img src="/images/outfit1.png"><img src="/images/outfit2.png"><img src="/images/outfit2a.png"></p>
-	<p><img src="/images/outfit2a.png"><img src="/images/outfit1.png"><img src="/images/outfit2.png"></p>
+	<% for outfit in @latest %>
+		<%= link_to image_tag(outfit.photos.first.public_filename(:thumb)), outfit %>	  
+	<% end %>
 </div>
 
 <div id="login">

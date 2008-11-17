@@ -1,7 +1,10 @@
+#require 'RMagick'
+
 class Photo < ActiveRecord::Base
 
   has_attachment :content_type => :image, 
                    :storage => :s3, 
+                   :processor => :Rmagick,
                    :max_size => 1.megabytes,
                    :thumbnails => { :thumb => '150x150>' }
 

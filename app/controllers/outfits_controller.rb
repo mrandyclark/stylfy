@@ -44,6 +44,8 @@ class OutfitsController < ApplicationController
     @photo = Photo.new(params[:photo])
     @photo.outfit = @outfit
     
+    @outfit.tag_list.add(params[:tags][:tags].split(','))
+    
     respond_to do |format|
       if @outfit.save && @photo.save
         flash[:notice] = 'Outfit was successfully created.'
