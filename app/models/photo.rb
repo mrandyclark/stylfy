@@ -1,5 +1,3 @@
-require "ImageScience"
-
 class Photo < ActiveRecord::Base
 
   has_attachment :content_type => :image, 
