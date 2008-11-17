@@ -39,12 +39,15 @@ class OutfitsController < ApplicationController
   # POST /outfits
   # POST /outfits.xml
   def create
+    debugger
     @outfit = Outfit.new(params[:outfit])
     
     @photo = Photo.new(params[:photo])
     @photo.outfit = @outfit
     
-    @outfit.tag_list.add(params[:tags][:tags].split(','))
+    if params[:tags][:tags]
+      @outfit.tag_list.add(params[:tags][:tags].split(','))
+    end
     
     respond_to do |format|
       if @outfit.save && @photo.save

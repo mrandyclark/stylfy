@@ -8725,3 +8725,951 @@ Rendering outfits/show
   [4;36;1mPhoto Load (0.001054)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) [0m
   [4;35;1mPhoto Columns (0.002302)[0m   [0mSHOW FIELDS FROM `photos`[0m
 Completed in 0.08708 (11 reqs/sec) | Rendering: 0.07254 (83%) | DB: 0.00731 (8%) | 200 OK [http://tableapp.dev/outfits/11]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 13:59:57) [GET]
+  Session ID: BAh7BzoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6
+Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--67c43d00ad8dbfc9b4b926da4047c5b0625641b9
+  Parameters: {"action"=>"index", "controller"=>"home"}
+DEPRECATION WARNING: You're using the Ruby-based MySQL library that ships with Rails. This library will be REMOVED FROM RAILS 2.2. Please switch to the offical mysql gem: `gem install mysql`  See http://www.rubyonrails.org/deprecation for details. (called from mysql_connection at /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/connection_adapters/mysql_adapter.rb:81)
+  [4;36;1mSQL (0.024369)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mOutfit Load (0.027977)[0m   [0mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+  [4;36;1mOutfit Columns (0.002341)[0m   [0;1mSHOW FIELDS FROM `outfits`[0m
+  [4;35;1mPhoto Load (0.039166)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 13) LIMIT 1[0m
+  [4;36;1mPhoto Columns (0.002968)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (0.000913)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 12) LIMIT 1[0m
+  [4;36;1mPhoto Load (0.000781)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) LIMIT 1[0m
+Completed in 0.34277 (2 reqs/sec) | Rendering: 0.15321 (44%) | DB: 0.09851 (28%) | 200 OK [http://tableapp.dev/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2008-11-17 14:00:01) [GET]
+  Session ID: BAh7BzoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6
+Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--67c43d00ad8dbfc9b4b926da4047c5b0625641b9
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/app
+Rendering sessions/new
+Completed in 0.01380 (72 reqs/sec) | Rendering: 0.01149 (83%) | DB: 0.00000 (0%) | 200 OK [http://tableapp.dev/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2008-11-17 14:00:05) [POST]
+  Session ID: BAh7CDoOcmV0dXJuX3RvMDoMY3NyZl9pZCIlYTRjMGY3Y2MyOTlmNGFiMDUy
+OTVjZDM3NDg2NDYwZTMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZs
+YXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--7f7dc5525bf8885b8c6ab34dd146df056b4ff696
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"1003888a6de0243e7791b511001e7fa0b6121e00", "action"=>"create", "controller"=>"sessions", "password"=>"22?!5n5", "login"=>"mrandyclark"}
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Columns (0.037029)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.001921)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'mrandyclark') LIMIT 1[0m
+Failed login for 'mrandyclark' from 127.0.0.1 at Mon Nov 17 19:00:05 UTC 2008
+Rendering template within layouts/app
+Rendering sessions/new
+Completed in 0.05476 (18 reqs/sec) | Rendering: 0.00158 (2%) | DB: 0.03895 (71%) | 200 OK [http://tableapp.dev/session]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2008-11-17 14:00:11) [POST]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewY6CmVycm9yIilDb3VsZG4ndCBs
+b2cgeW91IGluIGFzICdtcmFuZHljbGFyaycGOgpAdXNlZHsGOwlG--14afcd56540549ac99ccc0473c175ae15a9fe0b8
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"1003888a6de0243e7791b511001e7fa0b6121e00", "action"=>"create", "controller"=>"sessions", "password"=>"andy", "login"=>"andy"}
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Columns (0.002569)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.002199)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'andy') LIMIT 1[0m
+Failed login for 'andy' from 127.0.0.1 at Mon Nov 17 19:00:11 UTC 2008
+Rendering template within layouts/app
+Rendering sessions/new
+Completed in 0.01661 (60 reqs/sec) | Rendering: 0.00171 (10%) | DB: 0.00477 (28%) | 200 OK [http://tableapp.dev/session]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2008-11-17 14:00:14) [POST]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewY6CmVycm9yIiJDb3VsZG4ndCBs
+b2cgeW91IGluIGFzICdhbmR5JwY6CkB1c2VkewY7CUY=--a9ca0ec3ba318776e59a383f48fc32f0609b573f
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"1003888a6de0243e7791b511001e7fa0b6121e00", "action"=>"create", "controller"=>"sessions", "password"=>"22?!5n5", "login"=>"andy"}
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Columns (0.002170)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.000865)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'andy') LIMIT 1[0m
+Failed login for 'andy' from 127.0.0.1 at Mon Nov 17 19:00:14 UTC 2008
+Rendering template within layouts/app
+Rendering sessions/new
+Completed in 0.01443 (69 reqs/sec) | Rendering: 0.00130 (8%) | DB: 0.00303 (21%) | 200 OK [http://tableapp.dev/session]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2008-11-17 14:01:40) [POST]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewY6CmVycm9yIiJDb3VsZG4ndCBs
+b2cgeW91IGluIGFzICdhbmR5JwY6CkB1c2VkewY7CUY=--a9ca0ec3ba318776e59a383f48fc32f0609b573f
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"1003888a6de0243e7791b511001e7fa0b6121e00", "action"=>"create", "controller"=>"sessions", "password"=>"22?!5n5", "login"=>"andy"}
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Columns (0.002129)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.001338)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'andy') LIMIT 1[0m
+Failed login for 'andy' from 127.0.0.1 at Mon Nov 17 19:01:40 UTC 2008
+Rendering template within layouts/app
+Rendering sessions/new
+Completed in 0.01873 (53 reqs/sec) | Rendering: 0.00213 (11%) | DB: 0.00347 (18%) | 200 OK [http://tableapp.dev/session]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2008-11-17 14:01:55) [POST]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewY6CmVycm9yIiJDb3VsZG4ndCBs
+b2cgeW91IGluIGFzICdhbmR5JwY6CkB1c2VkewY7CUY=--a9ca0ec3ba318776e59a383f48fc32f0609b573f
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"1003888a6de0243e7791b511001e7fa0b6121e00", "action"=>"create", "controller"=>"sessions", "password"=>"22?!5n5", "login"=>"andy"}
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Columns (0.002471)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.000875)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'andy') LIMIT 1[0m
+Failed login for 'andy' from 127.0.0.1 at Mon Nov 17 19:01:55 UTC 2008
+Rendering template within layouts/app
+Rendering sessions/new
+Completed in 0.01884 (53 reqs/sec) | Rendering: 0.00263 (13%) | DB: 0.00335 (17%) | 200 OK [http://tableapp.dev/session]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2008-11-17 14:02:21) [POST]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewY6CmVycm9yIiJDb3VsZG4ndCBs
+b2cgeW91IGluIGFzICdhbmR5JwY6CkB1c2VkewY7CUY=--a9ca0ec3ba318776e59a383f48fc32f0609b573f
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"1003888a6de0243e7791b511001e7fa0b6121e00", "action"=>"create", "controller"=>"sessions", "password"=>"22?!5n5", "login"=>"andy"}
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Columns (0.002537)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.000942)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'andy') LIMIT 1[0m
+Failed login for 'andy' from 127.0.0.1 at Mon Nov 17 19:02:21 UTC 2008
+Rendering template within layouts/app
+Rendering sessions/new
+Completed in 0.01849 (54 reqs/sec) | Rendering: 0.00222 (12%) | DB: 0.00348 (18%) | 200 OK [http://tableapp.dev/session]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2008-11-17 14:02:55) [POST]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewY6CmVycm9yIiJDb3VsZG4ndCBs
+b2cgeW91IGluIGFzICdhbmR5JwY6CkB1c2VkewY7CUY=--a9ca0ec3ba318776e59a383f48fc32f0609b573f
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"1003888a6de0243e7791b511001e7fa0b6121e00", "action"=>"create", "controller"=>"sessions", "password"=>"22?!5n5", "login"=>"andy"}
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Columns (0.002888)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.000892)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'andy') LIMIT 1[0m
+Failed login for 'andy' from 127.0.0.1 at Mon Nov 17 19:02:55 UTC 2008
+Rendering template within layouts/app
+Rendering sessions/new
+Completed in 0.01711 (58 reqs/sec) | Rendering: 0.00244 (14%) | DB: 0.00378 (22%) | 200 OK [http://tableapp.dev/session]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2008-11-17 14:03:02) [POST]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewY6CmVycm9yIiJDb3VsZG4ndCBs
+b2cgeW91IGluIGFzICdhbmR5JwY6CkB1c2VkewY7CUY=--a9ca0ec3ba318776e59a383f48fc32f0609b573f
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"1003888a6de0243e7791b511001e7fa0b6121e00", "action"=>"create", "controller"=>"sessions", "password"=>"22?!5n5", "login"=>"andy"}
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Columns (0.002567)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.000890)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'andy') LIMIT 1[0m
+Failed login for 'andy' from 127.0.0.1 at Mon Nov 17 19:03:02 UTC 2008
+Rendering template within layouts/app
+Rendering sessions/new
+Completed in 0.01940 (51 reqs/sec) | Rendering: 0.00263 (13%) | DB: 0.00346 (17%) | 200 OK [http://tableapp.dev/session]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2008-11-17 14:03:21) [POST]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewY6CmVycm9yIiJDb3VsZG4ndCBs
+b2cgeW91IGluIGFzICdhbmR5JwY6CkB1c2VkewY7CUY=--a9ca0ec3ba318776e59a383f48fc32f0609b573f
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"1003888a6de0243e7791b511001e7fa0b6121e00", "action"=>"create", "controller"=>"sessions", "password"=>"22?!5n5", "login"=>"andy"}
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Columns (0.002299)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.001977)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'andy') LIMIT 1[0m
+Failed login for 'andy' from 127.0.0.1 at Mon Nov 17 19:03:21 UTC 2008
+Rendering template within layouts/app
+Rendering sessions/new
+Completed in 0.01712 (58 reqs/sec) | Rendering: 0.00250 (14%) | DB: 0.00428 (24%) | 200 OK [http://tableapp.dev/session]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 14:03:24) [GET]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewY6CmVycm9yIiJDb3VsZG4ndCBs
+b2cgeW91IGluIGFzICdhbmR5JwY6CkB1c2VkewY7CUY=--a9ca0ec3ba318776e59a383f48fc32f0609b573f
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mOutfit Load (0.000725)[0m   [0mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+Completed in 0.00926 (107 reqs/sec) | Rendering: 0.00175 (18%) | DB: 0.00073 (7%) | 200 OK [http://tableapp.dev/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2008-11-17 14:03:27) [GET]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewY6CmVycm9yIiJDb3VsZG4ndCBs
+b2cgeW91IGluIGFzICdhbmR5JwY6CkB1c2VkewY7CVQ=--56779610baed243dc3d3837cbcbad9f7f61712f5
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/app
+Rendering sessions/new
+Completed in 0.00345 (289 reqs/sec) | Rendering: 0.00123 (35%) | DB: 0.00000 (0%) | 200 OK [http://tableapp.dev/login]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 14:04:06) [GET]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--5b92f18f9f1312fa40aec8cd8d4f7f27224d6eff
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mOutfit Load (0.000701)[0m   [0;1mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+Completed in 0.00867 (115 reqs/sec) | Rendering: 0.00081 (9%) | DB: 0.00070 (8%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 14:04:18) [GET]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--5b92f18f9f1312fa40aec8cd8d4f7f27224d6eff
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mOutfit Load (0.000680)[0m   [0mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+Completed in 0.00719 (139 reqs/sec) | Rendering: 0.00078 (10%) | DB: 0.00068 (9%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 14:04:42) [GET]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--5b92f18f9f1312fa40aec8cd8d4f7f27224d6eff
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mOutfit Load (0.000692)[0m   [0;1mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+Completed in 0.00808 (123 reqs/sec) | Rendering: 0.00080 (9%) | DB: 0.00069 (8%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 14:04:50) [GET]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--5b92f18f9f1312fa40aec8cd8d4f7f27224d6eff
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mOutfit Load (0.000717)[0m   [0mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+Completed in 0.00743 (134 reqs/sec) | Rendering: 0.00081 (10%) | DB: 0.00072 (9%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 14:04:51) [GET]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--5b92f18f9f1312fa40aec8cd8d4f7f27224d6eff
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mOutfit Load (0.000749)[0m   [0;1mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+Completed in 0.00807 (123 reqs/sec) | Rendering: 0.00083 (10%) | DB: 0.00075 (9%) | 200 OK [http://tableapp.dev/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2008-11-17 14:04:54) [GET]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--5b92f18f9f1312fa40aec8cd8d4f7f27224d6eff
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/app
+Rendering sessions/new
+Completed in 0.00366 (273 reqs/sec) | Rendering: 0.00144 (39%) | DB: 0.00000 (0%) | 200 OK [http://tableapp.dev/login]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2008-11-17 14:05:45) [GET]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--5b92f18f9f1312fa40aec8cd8d4f7f27224d6eff
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/app
+Rendering sessions/new
+Completed in 0.00488 (205 reqs/sec) | Rendering: 0.00193 (39%) | DB: 0.00000 (0%) | 200 OK [http://tableapp.dev/login]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2008-11-17 14:05:53) [GET]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--5b92f18f9f1312fa40aec8cd8d4f7f27224d6eff
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/app
+Rendering sessions/new
+Completed in 0.00446 (224 reqs/sec) | Rendering: 0.00224 (50%) | DB: 0.00000 (0%) | 200 OK [http://tableapp.dev/login]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2008-11-17 14:06:10) [GET]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--5b92f18f9f1312fa40aec8cd8d4f7f27224d6eff
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/app
+Rendering sessions/new
+Completed in 0.00453 (220 reqs/sec) | Rendering: 0.00229 (50%) | DB: 0.00000 (0%) | 200 OK [http://tableapp.dev/login]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2008-11-17 14:06:18) [GET]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--5b92f18f9f1312fa40aec8cd8d4f7f27224d6eff
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/app
+Rendering sessions/new
+Completed in 0.00450 (222 reqs/sec) | Rendering: 0.00224 (49%) | DB: 0.00000 (0%) | 200 OK [http://tableapp.dev/login]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2008-11-17 14:06:33) [GET]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--5b92f18f9f1312fa40aec8cd8d4f7f27224d6eff
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/app
+Rendering sessions/new
+Completed in 0.00393 (254 reqs/sec) | Rendering: 0.00198 (50%) | DB: 0.00000 (0%) | 200 OK [http://tableapp.dev/login]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2008-11-17 14:07:10) [GET]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--5b92f18f9f1312fa40aec8cd8d4f7f27224d6eff
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/app
+Rendering sessions/new
+Completed in 0.00310 (322 reqs/sec) | Rendering: 0.00119 (38%) | DB: 0.00000 (0%) | 200 OK [http://tableapp.dev/login]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 14:07:14) [GET]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--5b92f18f9f1312fa40aec8cd8d4f7f27224d6eff
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mOutfit Load (0.000693)[0m   [0mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+Completed in 0.00749 (133 reqs/sec) | Rendering: 0.00081 (10%) | DB: 0.00069 (9%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 14:07:15) [GET]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--5b92f18f9f1312fa40aec8cd8d4f7f27224d6eff
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mOutfit Load (0.000861)[0m   [0;1mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+Completed in 0.00909 (110 reqs/sec) | Rendering: 0.00109 (12%) | DB: 0.00086 (9%) | 200 OK [http://tableapp.dev/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2008-11-17 14:07:42) [GET]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--5b92f18f9f1312fa40aec8cd8d4f7f27224d6eff
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/app
+Rendering sessions/new
+Completed in 0.00502 (199 reqs/sec) | Rendering: 0.00275 (54%) | DB: 0.00000 (0%) | 200 OK [http://tableapp.dev/login]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 14:07:48) [GET]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--5b92f18f9f1312fa40aec8cd8d4f7f27224d6eff
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mOutfit Load (0.000716)[0m   [0mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+Completed in 0.00775 (129 reqs/sec) | Rendering: 0.00084 (10%) | DB: 0.00072 (9%) | 200 OK [http://tableapp.dev/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2008-11-17 14:07:51) [GET]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--5b92f18f9f1312fa40aec8cd8d4f7f27224d6eff
+  Parameters: {"action"=>"new", "controller"=>"users"}
+  [4;36;1mUser Columns (0.002766)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/app
+Rendering users/new
+Completed in 0.01903 (52 reqs/sec) | Rendering: 0.00544 (28%) | DB: 0.00277 (14%) | 200 OK [http://tableapp.dev/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2008-11-17 14:08:00) [POST]
+  Session ID: BAh7CToMdXNlcl9pZDA6DnJldHVybl90bzA6DGNzcmZfaWQiJWE0YzBmN2Nj
+Mjk5ZjRhYjA1Mjk1Y2QzNzQ4NjQ2MGUzIgpmbGFzaElDOidBY3Rpb25Db250
+cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--5b92f18f9f1312fa40aec8cd8d4f7f27224d6eff
+  Parameters: {"user"=>{"password_confirmation"=>"22?15n5", "login"=>"andy", "password"=>"22?15n5", "email"=>"mrandyclark@gmail.com"}, "commit"=>"Sign up", "authenticity_token"=>"1003888a6de0243e7791b511001e7fa0b6121e00", "action"=>"create", "controller"=>"users"}
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Columns (0.002394)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.001143)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.000479)[0m   [0mSELECT `login` FROM `users` WHERE (`users`.login = 'andy') [0m
+  [4;36;1mSQL (0.000278)[0m   [0;1mSELECT `email` FROM `users` WHERE (`users`.email = 'mrandyclark@gmail.com') [0m
+  [4;35;1mUser Create (0.000361)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `crypted_password`, `remember_token_expires_at`, `remember_token`, `login`, `email`, `created_at`) VALUES('', '3e17fc3189df96ca0ef084c16d70431781c56c17', '2008-11-17 19:08:00', '65f194a5ec0672e19c44dde42e40ffca54218101', NULL, NULL, 'andy', 'mrandyclark@gmail.com', '2008-11-17 19:08:00')[0m
+  [4;36;1mSQL (0.002144)[0m   [0;1mCOMMIT[0m
+Redirected to http://tableapp.dev/
+Completed in 0.02338 (42 reqs/sec) | DB: 0.00680 (29%) | 302 Found [http://tableapp.dev/users]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 14:08:00) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVhNGMwZjdj
+YzI5OWY0YWIwNTI5NWNkMzc0ODY0NjBlMyIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiUlRoYW5rcyBm
+b3Igc2lnbmluZyB1cCEgIFdlJ3JlIHNlbmRpbmcgeW91IGFuIGVtYWlsIHdp
+dGggeW91ciBhY3RpdmF0aW9uIGNvZGUuBjoKQHVzZWR7BjsJRg==--329d991d3780054a8e74626dcb3f1524288790a2
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mOutfit Load (0.000754)[0m   [0mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+  [4;36;1mUser Columns (0.003600)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.001016)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 0.02397 (41 reqs/sec) | Rendering: 0.01133 (47%) | DB: 0.00537 (22%) | 200 OK [http://tableapp.dev/]
+
+
+Processing OutfitsController#new (for 127.0.0.1 at 2008-11-17 14:08:03) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVhNGMwZjdj
+YzI5OWY0YWIwNTI5NWNkMzc0ODY0NjBlMyIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiUlRoYW5rcyBm
+b3Igc2lnbmluZyB1cCEgIFdlJ3JlIHNlbmRpbmcgeW91IGFuIGVtYWlsIHdp
+dGggeW91ciBhY3RpdmF0aW9uIGNvZGUuBjoKQHVzZWR7BjsJVA==--ac7b8258157c87cb7f1486b78bf809bf2a71c0f8
+  Parameters: {"action"=>"new", "controller"=>"outfits"}
+  [4;36;1mOutfit Columns (0.002656)[0m   [0;1mSHOW FIELDS FROM `outfits`[0m
+  [4;35;1mPhoto Columns (0.002222)[0m   [0mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/app
+Rendering outfits/new
+Completed in 0.03643 (27 reqs/sec) | Rendering: 0.01393 (38%) | DB: 0.00488 (13%) | 200 OK [http://tableapp.dev/outfits/new]
+
+
+Processing OutfitsController#new (for 127.0.0.1 at 2008-11-17 14:08:09) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVhNGMwZjdj
+YzI5OWY0YWIwNTI5NWNkMzc0ODY0NjBlMyIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--7b718690aa8f71bc502481d7030e7a0d1b9fb82f
+  Parameters: {"action"=>"new", "controller"=>"outfits"}
+  [4;36;1mOutfit Columns (0.002374)[0m   [0;1mSHOW FIELDS FROM `outfits`[0m
+  [4;35;1mPhoto Columns (0.002229)[0m   [0mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/app
+Rendering outfits/new
+Completed in 0.02400 (41 reqs/sec) | Rendering: 0.00289 (12%) | DB: 0.00460 (19%) | 200 OK [http://tableapp.dev/outfits/new]
+
+
+Processing OutfitsController#new (for 127.0.0.1 at 2008-11-17 14:08:19) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVhNGMwZjdj
+YzI5OWY0YWIwNTI5NWNkMzc0ODY0NjBlMyIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--7b718690aa8f71bc502481d7030e7a0d1b9fb82f
+  Parameters: {"action"=>"new", "controller"=>"outfits"}
+  [4;36;1mOutfit Columns (0.002414)[0m   [0;1mSHOW FIELDS FROM `outfits`[0m
+  [4;35;1mPhoto Columns (0.002059)[0m   [0mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/app
+Rendering outfits/new
+Completed in 0.10899 (9 reqs/sec) | Rendering: 0.00355 (3%) | DB: 0.00447 (4%) | 200 OK [http://tableapp.dev/outfits/new]
+
+
+Processing OutfitsController#new (for 127.0.0.1 at 2008-11-17 14:08:27) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVhNGMwZjdj
+YzI5OWY0YWIwNTI5NWNkMzc0ODY0NjBlMyIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--7b718690aa8f71bc502481d7030e7a0d1b9fb82f
+  Parameters: {"action"=>"new", "controller"=>"outfits"}
+  [4;36;1mOutfit Columns (0.001915)[0m   [0;1mSHOW FIELDS FROM `outfits`[0m
+  [4;35;1mPhoto Columns (0.002699)[0m   [0mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/app
+Rendering outfits/new
+Completed in 0.02362 (42 reqs/sec) | Rendering: 0.00365 (15%) | DB: 0.00461 (19%) | 200 OK [http://tableapp.dev/outfits/new]
+
+
+Processing OutfitsController#create (for 127.0.0.1 at 2008-11-17 14:08:36) [POST]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVhNGMwZjdj
+YzI5OWY0YWIwNTI5NWNkMzc0ODY0NjBlMyIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--7b718690aa8f71bc502481d7030e7a0d1b9fb82f
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/CGI57770-1>}, "commit"=>"Create", "tags"=>{"tags"=>"H&M, Express, Argyle"}, "authenticity_token"=>"1003888a6de0243e7791b511001e7fa0b6121e00", "action"=>"create", "controller"=>"outfits", "outfit"=>{"description"=>"A Grey Sweater from H&M"}}
+  [4;36;1mOutfit Columns (0.002473)[0m   [0;1mSHOW FIELDS FROM `outfits`[0m
+  [4;35;1mPhoto Columns (0.002325)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mTagging Columns (0.002238)[0m   [0;1mSHOW FIELDS FROM `taggings`[0m
+  [4;35;1mSQL (0.000162)[0m   [0mBEGIN[0m
+  [4;36;1mOutfit Create (0.000293)[0m   [0;1mINSERT INTO `outfits` (`updated_at`, `dislikes`, `description`, `user_id`, `likes`, `created_at`) VALUES('2008-11-17 19:08:36', 0, 'A Grey Sweater from H&M', NULL, 0, '2008-11-17 19:08:36')[0m
+  [4;35;1mTag Load (0.000521)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'H&M') LIMIT 1[0m
+  [4;36;1mTag Columns (0.001948)[0m   [0;1mSHOW FIELDS FROM `tags`[0m
+  [4;35;1mSQL (0.000360)[0m   [0mSELECT `name` FROM `tags` WHERE (`tags`.name = 'H&M') [0m
+  [4;36;1mTag Create (0.000254)[0m   [0;1mINSERT INTO `tags` (`name`) VALUES('H&M')[0m
+  [4;35;1mTagging Create (0.000236)[0m   [0mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `created_at`) VALUES(1, 'Outfit', 1, '2008-11-17 19:08:36')[0m
+  [4;36;1mTag Load (0.000376)[0m   [0;1mSELECT * FROM `tags` WHERE (name LIKE 'Express') LIMIT 1[0m
+  [4;35;1mSQL (0.000293)[0m   [0mSELECT `name` FROM `tags` WHERE (`tags`.name = 'Express') [0m
+  [4;36;1mTag Create (0.000184)[0m   [0;1mINSERT INTO `tags` (`name`) VALUES('Express')[0m
+  [4;35;1mTagging Create (0.000167)[0m   [0mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `created_at`) VALUES(2, 'Outfit', 1, '2008-11-17 19:08:36')[0m
+  [4;36;1mTag Load (0.000304)[0m   [0;1mSELECT * FROM `tags` WHERE (name LIKE 'Argyle') LIMIT 1[0m
+  [4;35;1mSQL (0.000248)[0m   [0mSELECT `name` FROM `tags` WHERE (`tags`.name = 'Argyle') [0m
+  [4;36;1mTag Create (0.000358)[0m   [0;1mINSERT INTO `tags` (`name`) VALUES('Argyle')[0m
+  [4;35;1mTagging Create (0.000260)[0m   [0mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `created_at`) VALUES(3, 'Outfit', 1, '2008-11-17 19:08:36')[0m
+  [4;36;1mSQL (0.000641)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.000203)[0m   [0mBEGIN[0m
+  [4;36;1mPhoto Create (0.000344)[0m   [0;1mINSERT INTO `photos` (`content_type`, `outfit_id`, `thumbnail`, `size`, `filename`, `height`, `width`) VALUES('image/jpeg', 1, NULL, 88296, 'Photo_384.jpg', 480, 640)[0m
+  [4;35;1mSQL (0.000935)[0m   [0mCOMMIT[0m
+Redirected to http://tableapp.dev/outfits/1
+Completed in 1.97159 (0 reqs/sec) | DB: 0.01512 (0%) | 302 Found [http://tableapp.dev/outfits]
+
+
+Processing OutfitsController#show (for 127.0.0.1 at 2008-11-17 14:08:38) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVhNGMwZjdj
+YzI5OWY0YWIwNTI5NWNkMzc0ODY0NjBlMyIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiJU91dGZpdCB3
+YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQuBjoKQHVzZWR7BjsJRg==--2649c75b91a418c2c570895d6e0e54ab1a90454e
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"outfits"}
+  [4;36;1mOutfit Columns (0.002452)[0m   [0;1mSHOW FIELDS FROM `outfits`[0m
+  [4;35;1mOutfit Load (0.000881)[0m   [0mSELECT * FROM `outfits` WHERE (`outfits`.`id` = 1) [0m
+Rendering template within layouts/app
+Rendering outfits/show
+  [4;36;1mPhoto Load (0.000954)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 1) [0m
+  [4;35;1mPhoto Columns (0.002496)[0m   [0mSHOW FIELDS FROM `photos`[0m
+Completed in 0.05167 (19 reqs/sec) | Rendering: 0.03688 (71%) | DB: 0.00678 (13%) | 200 OK [http://tableapp.dev/outfits/1]
+DEPRECATION WARNING: You're using the Ruby-based MySQL library that ships with Rails. This library will be REMOVED FROM RAILS 2.2. Please switch to the offical mysql gem: `gem install mysql`  See http://www.rubyonrails.org/deprecation for details. (called from mysql_connection at /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/connection_adapters/mysql_adapter.rb:81)
+  [4;36;1mSQL (0.000175)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000552)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.020051)[0m   [0;1mSELECT version FROM schema_migrations[0m
+DEPRECATION WARNING: You're using the Ruby-based MySQL library that ships with Rails. This library will be REMOVED FROM RAILS 2.2. Please switch to the offical mysql gem: `gem install mysql`  See http://www.rubyonrails.org/deprecation for details. (called from mysql_connection at /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/connection_adapters/mysql_adapter.rb:81)
+  [4;36;1mSQL (0.000173)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000548)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000339)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000155)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.000552)[0m   [0;1mDROP DATABASE IF EXISTS `stylfy_test`[0m
+  [4;35;1mSQL (0.000316)[0m   [0mCREATE DATABASE `stylfy_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.000198)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000469)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.002322)[0m   [0;1mCREATE TABLE `outfits` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `description` varchar(255), `likes` int(11) DEFAULT 0, `dislikes` int(11) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000616)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.002041)[0m   [0;1mCREATE TABLE `photos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `outfit_id` int(11), `content_type` varchar(255), `filename` varchar(255), `thumbnail` varchar(255), `size` int(11), `width` int(11), `height` int(11)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000598)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.002007)[0m   [0;1mCREATE TABLE `taggings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11), `taggable_id` int(11), `taggable_type` varchar(255), `created_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.006656)[0m   [0mCREATE INDEX `index_taggings_on_tag_id` ON `taggings` (`tag_id`)[0m
+  [4;36;1mSQL (0.005416)[0m   [0;1mCREATE INDEX `index_taggings_on_taggable_id_and_taggable_type` ON `taggings` (`taggable_id`, `taggable_type`)[0m
+  [4;35;1mSQL (0.000679)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.029404)[0m   [0;1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000767)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.002161)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `login` varchar(40), `name` varchar(100) DEFAULT '', `email` varchar(100), `crypted_password` varchar(40), `salt` varchar(40), `created_at` datetime, `updated_at` datetime, `remember_token` varchar(40), `remember_token_expires_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.006480)[0m   [0mCREATE UNIQUE INDEX `index_users_on_login` ON `users` (`login`)[0m
+  [4;36;1mSQL (0.000712)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.001853)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.005647)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.000788)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000529)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (0.000791)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20081117144845')[0m
+  [4;36;1mSQL (0.000946)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20081114203923')[0m
+  [4;35;1mSQL (0.000726)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20081115194313')[0m
+  [4;36;1mSQL (0.000748)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20081115203915')[0m
+
+
+Processing OutfitsController#index (for 127.0.0.1 at 2008-11-17 14:12:55) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVhNGMwZjdj
+YzI5OWY0YWIwNTI5NWNkMzc0ODY0NjBlMyIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiJU91dGZpdCB3
+YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQuBjoKQHVzZWR7BjsJVA==--f324c2d191a0d732a85156b984dd5cff585e0596
+  Parameters: {"action"=>"index", "controller"=>"outfits"}
+  [4;36;1mOutfit Load (0.000740)[0m   [0;1mSELECT * FROM `outfits` [0m
+Rendering template within layouts/app
+Rendering outfits/index
+  [4;35;1mOutfit Columns (0.001971)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+Completed in 0.01265 (79 reqs/sec) | Rendering: 0.00333 (26%) | DB: 0.00271 (21%) | 200 OK [http://tableapp.dev/outfits]
+
+
+Processing OutfitsController#new (for 127.0.0.1 at 2008-11-17 14:12:56) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVhNGMwZjdj
+YzI5OWY0YWIwNTI5NWNkMzc0ODY0NjBlMyIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--7b718690aa8f71bc502481d7030e7a0d1b9fb82f
+  Parameters: {"action"=>"new", "controller"=>"outfits"}
+  [4;36;1mOutfit Columns (0.002229)[0m   [0;1mSHOW FIELDS FROM `outfits`[0m
+
+
+TypeError (wrong argument type String (expected Module)):
+    /app/models/photo.rb:1:in `include'
+    /app/models/photo.rb:1
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:216:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:216:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:215:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:96:in `require_or_load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:261:in `load_missing_constant'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:468:in `const_missing_not_from_s3_library'
+    /Library/Ruby/Gems/1.8/gems/aws-s3-0.5.1/lib/aws/s3/extensions.rb:174:in `const_missing'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:480:in `const_missing'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:273:in `load_missing_constant'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:484:in `const_missing'
+    /app/controllers/outfits_controller.rb:27:in `new'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1166:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1166:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:579:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/session_management.rb:130:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:389:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/server.rb:39
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing OutfitsController#new (for 127.0.0.1 at 2008-11-17 14:13:03) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVhNGMwZjdj
+YzI5OWY0YWIwNTI5NWNkMzc0ODY0NjBlMyIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--7b718690aa8f71bc502481d7030e7a0d1b9fb82f
+  Parameters: {"action"=>"new", "controller"=>"outfits"}
+  [4;35;1mOutfit Columns (0.002272)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Columns (0.002272)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/app
+Rendering outfits/new
+Completed in 0.03662 (27 reqs/sec) | Rendering: 0.00296 (8%) | DB: 0.00677 (18%) | 200 OK [http://tableapp.dev/outfits/new]
+
+
+Processing OutfitsController#create (for 127.0.0.1 at 2008-11-17 14:13:10) [POST]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVhNGMwZjdj
+YzI5OWY0YWIwNTI5NWNkMzc0ODY0NjBlMyIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--7b718690aa8f71bc502481d7030e7a0d1b9fb82f
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/CGI57770-1>}, "commit"=>"Create", "tags"=>{"tags"=>"Express, H&M, Grey"}, "authenticity_token"=>"1003888a6de0243e7791b511001e7fa0b6121e00", "action"=>"create", "controller"=>"outfits", "outfit"=>{"description"=>"A Delicious Meal"}}
+  [4;35;1mOutfit Columns (0.003449)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Columns (0.002116)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mSQL (0.000139)[0m   [0mBEGIN[0m
+  [4;36;1mOutfit Create (0.000256)[0m   [0;1mINSERT INTO `outfits` (`updated_at`, `dislikes`, `description`, `user_id`, `likes`, `created_at`) VALUES('2008-11-17 19:13:10', 0, 'A Delicious Meal', NULL, 0, '2008-11-17 19:13:10')[0m
+  [4;35;1mTag Load (0.000375)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'Express') LIMIT 1[0m
+  [4;36;1mTagging Create (0.000195)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `created_at`) VALUES(2, 'Outfit', 2, '2008-11-17 19:13:10')[0m
+  [4;35;1mTag Load (0.000327)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'H&M') LIMIT 1[0m
+  [4;36;1mTagging Create (0.000250)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `created_at`) VALUES(1, 'Outfit', 2, '2008-11-17 19:13:10')[0m
+  [4;35;1mTag Load (0.000544)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'Grey') LIMIT 1[0m
+  [4;36;1mSQL (0.000261)[0m   [0;1mSELECT `name` FROM `tags` WHERE (`tags`.name = 'Grey') [0m
+  [4;35;1mTag Create (0.000166)[0m   [0mINSERT INTO `tags` (`name`) VALUES('Grey')[0m
+  [4;36;1mTagging Create (0.000180)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `created_at`) VALUES(4, 'Outfit', 2, '2008-11-17 19:13:10')[0m
+  [4;35;1mSQL (0.000591)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000158)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhoto Create (0.000254)[0m   [0mINSERT INTO `photos` (`content_type`, `outfit_id`, `thumbnail`, `size`, `filename`, `height`, `width`) VALUES('image/jpeg', 2, NULL, 91247, 'Photo_382.jpg', 480, 640)[0m
+  [4;36;1mSQL (0.000721)[0m   [0;1mCOMMIT[0m
+Redirected to http://tableapp.dev/outfits/2
+Completed in 2.23981 (0 reqs/sec) | DB: 0.00998 (0%) | 302 Found [http://tableapp.dev/outfits]
+
+
+Processing OutfitsController#show (for 127.0.0.1 at 2008-11-17 14:13:12) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVhNGMwZjdj
+YzI5OWY0YWIwNTI5NWNkMzc0ODY0NjBlMyIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiJU91dGZpdCB3
+YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQuBjoKQHVzZWR7BjsJRg==--2649c75b91a418c2c570895d6e0e54ab1a90454e
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"outfits"}
+  [4;35;1mOutfit Columns (0.002201)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mOutfit Load (0.000754)[0m   [0;1mSELECT * FROM `outfits` WHERE (`outfits`.`id` = 2) [0m
+Rendering template within layouts/app
+Rendering outfits/show
+  [4;35;1mPhoto Load (0.000768)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 2) [0m
+  [4;36;1mPhoto Columns (0.001830)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+Completed in 0.02777 (36 reqs/sec) | Rendering: 0.01516 (54%) | DB: 0.00555 (19%) | 200 OK [http://tableapp.dev/outfits/2]
+
+
+Processing OutfitsController#show (for 127.0.0.1 at 2008-11-17 14:21:13) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkGOg5yZXR1cm5fdG8wOgxjc3JmX2lkIiVhNGMwZjdj
+YzI5OWY0YWIwNTI5NWNkMzc0ODY0NjBlMyIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiJU91dGZpdCB3
+YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQuBjoKQHVzZWR7BjsJVA==--f324c2d191a0d732a85156b984dd5cff585e0596
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"outfits"}
+DEPRECATION WARNING: You're using the Ruby-based MySQL library that ships with Rails. This library will be REMOVED FROM RAILS 2.2. Please switch to the offical mysql gem: `gem install mysql`  See http://www.rubyonrails.org/deprecation for details. (called from mysql_connection at /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/connection_adapters/mysql_adapter.rb:81)
+  [4;36;1mSQL (0.000238)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mOutfit Columns (0.002885)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mOutfit Load (0.001023)[0m   [0;1mSELECT * FROM `outfits` WHERE (`outfits`.`id` = 2) [0m
+
+
+ActiveRecord::RecordNotFound (Couldn't find Outfit with ID=2):
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/base.rb:1383:in `find_one'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/base.rb:1366:in `find_from_ids'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/base.rb:541:in `find'
+    /app/controllers/outfits_controller.rb:15:in `show'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1166:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:1166:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:579:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.1.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:529:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/session_management.rb:130:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/base.rb:389:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:503:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:355:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.2/lib/active_support/dependencies.rb:510:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.2/lib/commands/server.rb:39
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 14:21:17) [GET]
+  Session ID: BAh7CToOcmV0dXJuX3RvMDoMY3NyZl9pZCIlYTRjMGY3Y2MyOTlmNGFiMDUy
+OTVjZDM3NDg2NDYwZTMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZs
+YXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA6DHVzZXJfaWRpBg==--7dcf484ba995fe773b26b9a5153fc0a726e2315b
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mOutfit Load (0.001102)[0m   [0mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+  [4;36;1mOutfit Columns (0.003107)[0m   [0;1mSHOW FIELDS FROM `outfits`[0m
+  [4;35;1mPhoto Load (0.001223)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 1) LIMIT 1[0m
+  [4;36;1mPhoto Columns (0.002550)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mUser Columns (0.003373)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.001530)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 0.23864 (4 reqs/sec) | Rendering: 0.21588 (90%) | DB: 0.01703 (7%) | 200 OK [http://tableapp.dev/]
+
+
+Processing OutfitsController#new (for 127.0.0.1 at 2008-11-17 14:21:21) [GET]
+  Session ID: BAh7CToOcmV0dXJuX3RvMDoMY3NyZl9pZCIlYTRjMGY3Y2MyOTlmNGFiMDUy
+OTVjZDM3NDg2NDYwZTMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZs
+YXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA6DHVzZXJfaWRpBg==--7dcf484ba995fe773b26b9a5153fc0a726e2315b
+  Parameters: {"action"=>"new", "controller"=>"outfits"}
+  [4;35;1mOutfit Columns (0.002698)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Columns (0.002924)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/app
+Rendering outfits/new
+Completed in 0.03390 (29 reqs/sec) | Rendering: 0.00493 (14%) | DB: 0.00562 (16%) | 200 OK [http://tableapp.dev/outfits/new]
+
+
+Processing OutfitsController#create (for 127.0.0.1 at 2008-11-17 14:21:38) [POST]
+  Session ID: BAh7CToOcmV0dXJuX3RvMDoMY3NyZl9pZCIlYTRjMGY3Y2MyOTlmNGFiMDUy
+OTVjZDM3NDg2NDYwZTMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZs
+YXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA6DHVzZXJfaWRpBg==--7dcf484ba995fe773b26b9a5153fc0a726e2315b
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/CGI57867-1>}, "commit"=>"Create", "tags"=>{"tags"=>"H&M, Express, Argyle"}, "authenticity_token"=>"1003888a6de0243e7791b511001e7fa0b6121e00", "action"=>"create", "controller"=>"outfits", "outfit"=>{"description"=>"Fall Sweaters from H&M"}}
+  [4;35;1mOutfit Columns (0.002707)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Columns (0.002838)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mTagging Columns (0.002159)[0m   [0mSHOW FIELDS FROM `taggings`[0m
+  [4;36;1mSQL (0.000157)[0m   [0;1mBEGIN[0m
+  [4;35;1mOutfit Create (0.000284)[0m   [0mINSERT INTO `outfits` (`updated_at`, `dislikes`, `description`, `user_id`, `likes`, `created_at`) VALUES('2008-11-17 19:22:55', 0, 'Fall Sweaters from H&M', NULL, 0, '2008-11-17 19:22:55')[0m
+  [4;36;1mTag Load (0.000518)[0m   [0;1mSELECT * FROM `tags` WHERE (name LIKE 'H&M') LIMIT 1[0m
+  [4;35;1mTag Columns (0.002069)[0m   [0mSHOW FIELDS FROM `tags`[0m
+  [4;36;1mTagging Create (0.000330)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `created_at`) VALUES(1, 'Outfit', 2, '2008-11-17 19:22:55')[0m
+  [4;35;1mTag Load (0.000534)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'Express') LIMIT 1[0m
+  [4;36;1mTagging Create (0.000232)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `created_at`) VALUES(2, 'Outfit', 2, '2008-11-17 19:22:55')[0m
+  [4;35;1mTag Load (0.000515)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'Argyle') LIMIT 1[0m
+  [4;36;1mTagging Create (0.000283)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `created_at`) VALUES(3, 'Outfit', 2, '2008-11-17 19:22:55')[0m
+  [4;35;1mSQL (0.000619)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000200)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhoto Create (0.000303)[0m   [0mINSERT INTO `photos` (`content_type`, `outfit_id`, `thumbnail`, `size`, `filename`, `height`, `width`) VALUES('image/jpeg', 2, NULL, 88296, 'Photo_384.jpg', 480, 640)[0m
+  [4;36;1mSQL (0.000792)[0m   [0;1mCOMMIT[0m
+Redirected to http://tableapp.dev/outfits/2
+Completed in 78.72678 (0 reqs/sec) | DB: 0.01454 (0%) | 302 Found [http://tableapp.dev/outfits]
+
+
+Processing OutfitsController#show (for 127.0.0.1 at 2008-11-17 14:22:57) [GET]
+  Session ID: BAh7CToOcmV0dXJuX3RvMDoMY3NyZl9pZCIlYTRjMGY3Y2MyOTlmNGFiMDUy
+OTVjZDM3NDg2NDYwZTMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZs
+YXNoOjpGbGFzaEhhc2h7BjoLbm90aWNlIiVPdXRmaXQgd2FzIHN1Y2Nlc3Nm
+dWxseSBjcmVhdGVkLgY6CkB1c2VkewY7CEY6DHVzZXJfaWRpBg==--3bf828e3ccdaef71d367a6790213e2aee4656d67
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"outfits"}
+  [4;35;1mOutfit Columns (0.003633)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mOutfit Load (0.001258)[0m   [0;1mSELECT * FROM `outfits` WHERE (`outfits`.`id` = 2) [0m
+Rendering template within layouts/app
+Rendering outfits/show
+  [4;35;1mPhoto Load (0.001373)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 2) [0m
+  [4;36;1mPhoto Columns (0.002991)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+Completed in 0.11316 (8 reqs/sec) | Rendering: 0.02228 (19%) | DB: 0.00926 (8%) | 200 OK [http://tableapp.dev/outfits/2]
+
+
+Processing OutfitsController#index (for 127.0.0.1 at 2008-11-17 14:26:36) [GET]
+  Session ID: BAh7CToOcmV0dXJuX3RvMDoMY3NyZl9pZCIlYTRjMGY3Y2MyOTlmNGFiMDUy
+OTVjZDM3NDg2NDYwZTMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZs
+YXNoOjpGbGFzaEhhc2h7BjoLbm90aWNlIiVPdXRmaXQgd2FzIHN1Y2Nlc3Nm
+dWxseSBjcmVhdGVkLgY6CkB1c2VkewY7CFQ6DHVzZXJfaWRpBg==--665dd5f9fec2df253bdbc4cc9410d29af31509fb
+  Parameters: {"action"=>"index", "controller"=>"outfits"}
+  [4;35;1mOutfit Load (0.001242)[0m   [0mSELECT * FROM `outfits` [0m
+Rendering template within layouts/app
+Rendering outfits/index
+  [4;36;1mOutfit Columns (0.002384)[0m   [0;1mSHOW FIELDS FROM `outfits`[0m
+Completed in 0.01731 (57 reqs/sec) | Rendering: 0.00430 (24%) | DB: 0.00363 (20%) | 200 OK [http://tableapp.dev/outfits]
+
+
+Processing OutfitsController#new (for 127.0.0.1 at 2008-11-17 14:26:38) [GET]
+  Session ID: BAh7CToOcmV0dXJuX3RvMDoMY3NyZl9pZCIlYTRjMGY3Y2MyOTlmNGFiMDUy
+OTVjZDM3NDg2NDYwZTMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZs
+YXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA6DHVzZXJfaWRpBg==--7dcf484ba995fe773b26b9a5153fc0a726e2315b
+  Parameters: {"action"=>"new", "controller"=>"outfits"}
+  [4;35;1mOutfit Columns (0.002761)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Columns (0.003036)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/app
+Rendering outfits/new
+Completed in 0.03355 (29 reqs/sec) | Rendering: 0.00356 (10%) | DB: 0.00580 (17%) | 200 OK [http://tableapp.dev/outfits/new]
+
+
+Processing OutfitsController#create (for 127.0.0.1 at 2008-11-17 14:26:44) [POST]
+  Session ID: BAh7CToOcmV0dXJuX3RvMDoMY3NyZl9pZCIlYTRjMGY3Y2MyOTlmNGFiMDUy
+OTVjZDM3NDg2NDYwZTMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZs
+YXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA6DHVzZXJfaWRpBg==--7dcf484ba995fe773b26b9a5153fc0a726e2315b
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/CGI57867-1>}, "commit"=>"Create", "tags"=>{"tags"=>"H&M, Express, Grey, Sweater"}, "authenticity_token"=>"1003888a6de0243e7791b511001e7fa0b6121e00", "action"=>"create", "controller"=>"outfits", "outfit"=>{"description"=>"A Grey Sweater from H&M"}}
+  [4;35;1mOutfit Columns (0.002312)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Columns (0.002709)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mSQL (0.000196)[0m   [0mBEGIN[0m
+  [4;36;1mOutfit Create (0.000305)[0m   [0;1mINSERT INTO `outfits` (`updated_at`, `dislikes`, `description`, `user_id`, `likes`, `created_at`) VALUES('2008-11-17 19:27:17', 0, 'A Grey Sweater from H&M', NULL, 0, '2008-11-17 19:27:17')[0m
+  [4;35;1mTag Load (0.001258)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'H&M') LIMIT 1[0m
+  [4;36;1mTagging Create (0.000746)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `created_at`) VALUES(1, 'Outfit', 3, '2008-11-17 19:27:17')[0m
+  [4;35;1mTag Load (0.000563)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'Express') LIMIT 1[0m
+  [4;36;1mTagging Create (0.000242)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `created_at`) VALUES(2, 'Outfit', 3, '2008-11-17 19:27:17')[0m
+  [4;35;1mTag Load (0.000418)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'Grey') LIMIT 1[0m
+  [4;36;1mSQL (0.000321)[0m   [0;1mSELECT `name` FROM `tags` WHERE (`tags`.name = 'Grey') [0m
+  [4;35;1mTag Create (0.000196)[0m   [0mINSERT INTO `tags` (`name`) VALUES('Grey')[0m
+  [4;36;1mTagging Create (0.000219)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `created_at`) VALUES(4, 'Outfit', 3, '2008-11-17 19:27:17')[0m
+  [4;35;1mTag Load (0.000428)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'Sweater') LIMIT 1[0m
+  [4;36;1mSQL (0.000309)[0m   [0;1mSELECT `name` FROM `tags` WHERE (`tags`.name = 'Sweater') [0m
+  [4;35;1mTag Create (0.000180)[0m   [0mINSERT INTO `tags` (`name`) VALUES('Sweater')[0m
+  [4;36;1mTagging Create (0.000211)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `created_at`) VALUES(5, 'Outfit', 3, '2008-11-17 19:27:17')[0m
+  [4;35;1mSQL (0.000551)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000190)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhoto Create (0.000428)[0m   [0mINSERT INTO `photos` (`content_type`, `outfit_id`, `thumbnail`, `size`, `filename`, `height`, `width`) VALUES('image/jpeg', 3, NULL, 86324, 'Photo_386.jpg', 480, 640)[0m
+  [4;36;1mSQL (0.000740)[0m   [0;1mCOMMIT[0m
+Redirected to http://tableapp.dev/outfits/3
+Completed in 34.73724 (0 reqs/sec) | DB: 0.01252 (0%) | 302 Found [http://tableapp.dev/outfits]
+
+
+Processing OutfitsController#show (for 127.0.0.1 at 2008-11-17 14:27:19) [GET]
+  Session ID: BAh7CToOcmV0dXJuX3RvMDoMY3NyZl9pZCIlYTRjMGY3Y2MyOTlmNGFiMDUy
+OTVjZDM3NDg2NDYwZTMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZs
+YXNoOjpGbGFzaEhhc2h7BjoLbm90aWNlIiVPdXRmaXQgd2FzIHN1Y2Nlc3Nm
+dWxseSBjcmVhdGVkLgY6CkB1c2VkewY7CEY6DHVzZXJfaWRpBg==--3bf828e3ccdaef71d367a6790213e2aee4656d67
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"outfits"}
+  [4;35;1mOutfit Columns (0.002987)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mOutfit Load (0.001257)[0m   [0;1mSELECT * FROM `outfits` WHERE (`outfits`.`id` = 3) [0m
+Rendering template within layouts/app
+Rendering outfits/show
+  [4;35;1mPhoto Load (0.001094)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 3) [0m
+  [4;36;1mPhoto Columns (0.002727)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+Completed in 0.04185 (23 reqs/sec) | Rendering: 0.02108 (50%) | DB: 0.00806 (19%) | 200 OK [http://tableapp.dev/outfits/3]
+
+
+Processing OutfitsController#index (for 127.0.0.1 at 2008-11-17 14:30:08) [GET]
+  Session ID: BAh7CToOcmV0dXJuX3RvMDoMY3NyZl9pZCIlYTRjMGY3Y2MyOTlmNGFiMDUy
+OTVjZDM3NDg2NDYwZTMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZs
+YXNoOjpGbGFzaEhhc2h7BjoLbm90aWNlIiVPdXRmaXQgd2FzIHN1Y2Nlc3Nm
+dWxseSBjcmVhdGVkLgY6CkB1c2VkewY7CFQ6DHVzZXJfaWRpBg==--665dd5f9fec2df253bdbc4cc9410d29af31509fb
+  Parameters: {"action"=>"index", "controller"=>"outfits"}
+  [4;35;1mOutfit Load (0.001398)[0m   [0mSELECT * FROM `outfits` [0m
+Rendering template within layouts/app
+Rendering outfits/index
+  [4;36;1mOutfit Columns (0.002897)[0m   [0;1mSHOW FIELDS FROM `outfits`[0m
+Completed in 0.01930 (51 reqs/sec) | Rendering: 0.00462 (23%) | DB: 0.00430 (22%) | 200 OK [http://tableapp.dev/outfits]
+
+
+Processing OutfitsController#new (for 127.0.0.1 at 2008-11-17 14:30:09) [GET]
+  Session ID: BAh7CToOcmV0dXJuX3RvMDoMY3NyZl9pZCIlYTRjMGY3Y2MyOTlmNGFiMDUy
+OTVjZDM3NDg2NDYwZTMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZs
+YXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA6DHVzZXJfaWRpBg==--7dcf484ba995fe773b26b9a5153fc0a726e2315b
+  Parameters: {"action"=>"new", "controller"=>"outfits"}
+  [4;35;1mOutfit Columns (0.002317)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Columns (0.002438)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/app
+Rendering outfits/new
+Completed in 0.03128 (31 reqs/sec) | Rendering: 0.00294 (9%) | DB: 0.00476 (15%) | 200 OK [http://tableapp.dev/outfits/new]
+
+
+Processing OutfitsController#create (for 127.0.0.1 at 2008-11-17 14:30:17) [POST]
+  Session ID: BAh7CToOcmV0dXJuX3RvMDoMY3NyZl9pZCIlYTRjMGY3Y2MyOTlmNGFiMDUy
+OTVjZDM3NDg2NDYwZTMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZs
+YXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA6DHVzZXJfaWRpBg==--7dcf484ba995fe773b26b9a5153fc0a726e2315b
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/CGI57867-1>}, "commit"=>"Create", "tags"=>{"tags"=>"H&M, Express, Argyle"}, "authenticity_token"=>"1003888a6de0243e7791b511001e7fa0b6121e00", "action"=>"create", "controller"=>"outfits", "outfit"=>{"description"=>"A Delicious Meal"}}
+  [4;35;1mOutfit Columns (0.002274)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Columns (0.068409)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mSQL (0.000214)[0m   [0mBEGIN[0m
+  [4;36;1mOutfit Create (0.000314)[0m   [0;1mINSERT INTO `outfits` (`updated_at`, `dislikes`, `description`, `user_id`, `likes`, `created_at`) VALUES('2008-11-17 19:30:20', 0, 'A Delicious Meal', NULL, 0, '2008-11-17 19:30:20')[0m
+  [4;35;1mTag Load (0.000506)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'H&M') LIMIT 1[0m
+  [4;36;1mTagging Create (0.000215)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `created_at`) VALUES(1, 'Outfit', 4, '2008-11-17 19:30:20')[0m
+  [4;35;1mTag Load (0.000484)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'Express') LIMIT 1[0m
+  [4;36;1mTagging Create (0.000218)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `created_at`) VALUES(2, 'Outfit', 4, '2008-11-17 19:30:20')[0m
+  [4;35;1mTag Load (0.000439)[0m   [0mSELECT * FROM `tags` WHERE (name LIKE 'Argyle') LIMIT 1[0m
+  [4;36;1mTagging Create (0.000206)[0m   [0;1mINSERT INTO `taggings` (`tag_id`, `taggable_type`, `taggable_id`, `created_at`) VALUES(3, 'Outfit', 4, '2008-11-17 19:30:20')[0m
+  [4;35;1mSQL (0.000638)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000229)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhoto Create (0.000388)[0m   [0mINSERT INTO `photos` (`content_type`, `outfit_id`, `thumbnail`, `size`, `filename`, `height`, `width`) VALUES('image/jpeg', 4, NULL, 91247, 'Photo_382.jpg', 480, 640)[0m
+  [4;36;1mSQL (0.000870)[0m   [0;1mCOMMIT[0m
+Redirected to http://tableapp.dev/outfits/4
+Completed in 4.81344 (0 reqs/sec) | DB: 0.07540 (1%) | 302 Found [http://tableapp.dev/outfits]
+
+
+Processing OutfitsController#show (for 127.0.0.1 at 2008-11-17 14:30:22) [GET]
+  Session ID: BAh7CToOcmV0dXJuX3RvMDoMY3NyZl9pZCIlYTRjMGY3Y2MyOTlmNGFiMDUy
+OTVjZDM3NDg2NDYwZTMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZs
+YXNoOjpGbGFzaEhhc2h7BjoLbm90aWNlIiVPdXRmaXQgd2FzIHN1Y2Nlc3Nm
+dWxseSBjcmVhdGVkLgY6CkB1c2VkewY7CEY6DHVzZXJfaWRpBg==--3bf828e3ccdaef71d367a6790213e2aee4656d67
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"outfits"}
+  [4;35;1mOutfit Columns (0.003226)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mOutfit Load (0.001115)[0m   [0;1mSELECT * FROM `outfits` WHERE (`outfits`.`id` = 4) [0m
+Rendering template within layouts/app
+Rendering outfits/show
+  [4;35;1mPhoto Load (0.001283)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 4) [0m
+  [4;36;1mPhoto Columns (0.002820)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+Completed in 0.03852 (25 reqs/sec) | Rendering: 0.02124 (55%) | DB: 0.00844 (21%) | 200 OK [http://tableapp.dev/outfits/4]

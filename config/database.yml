@@ -1,13 +1,13 @@
 development:
   adapter: mysql
-  database: wearingit_dev
+  database: stylfy_dev
   username: root
   password:
   host: localhost
 
 test:
   adapter: mysql
-  database: wearingit_test
+  database: stylfy_test
   username: root
   password:
   host: localhost
