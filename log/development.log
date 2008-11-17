@@ -8652,3 +8652,63 @@ Rendering home/index
   [4;36;1mPhoto Load (0.000933)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 12) LIMIT 1[0m
   [4;35;1mPhoto Load (0.000825)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) LIMIT 1[0m
 Completed in 0.09132 (10 reqs/sec) | Rendering: 0.07690 (84%) | DB: 0.00830 (9%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 12:21:19) [GET]
+  Session ID: BAh7BzoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6
+Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--67c43d00ad8dbfc9b4b926da4047c5b0625641b9
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mOutfit Load (0.000844)[0m   [0;1mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+  [4;35;1mOutfit Columns (0.002346)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Load (0.001383)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 13) LIMIT 1[0m
+  [4;35;1mPhoto Columns (0.002194)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (0.000887)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 12) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.001977)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) LIMIT 1[0m
+Completed in 0.11079 (9 reqs/sec) | Rendering: 0.09476 (85%) | DB: 0.00963 (8%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 12:21:52) [GET]
+  Session ID: BAh7BzoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6
+Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--67c43d00ad8dbfc9b4b926da4047c5b0625641b9
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mOutfit Load (0.000861)[0m   [0;1mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+  [4;35;1mOutfit Columns (0.002485)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Load (0.000816)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 13) LIMIT 1[0m
+  [4;35;1mPhoto Columns (0.002069)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (0.000919)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 12) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.000810)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) LIMIT 1[0m
+Completed in 0.08500 (11 reqs/sec) | Rendering: 0.07072 (83%) | DB: 0.00796 (9%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 12:21:56) [GET]
+  Session ID: BAh7BzoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6
+Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--67c43d00ad8dbfc9b4b926da4047c5b0625641b9
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mOutfit Load (0.000879)[0m   [0;1mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+  [4;35;1mOutfit Columns (0.001875)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Load (0.001834)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 13) LIMIT 1[0m
+  [4;35;1mPhoto Columns (0.002384)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (0.000853)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 12) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.000967)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) LIMIT 1[0m
+Completed in 0.08997 (11 reqs/sec) | Rendering: 0.07420 (82%) | DB: 0.00879 (9%) | 200 OK [http://tableapp.dev/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2008-11-17 12:21:59) [GET]
+  Session ID: BAh7BzoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6
+Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--67c43d00ad8dbfc9b4b926da4047c5b0625641b9
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mOutfit Load (0.000868)[0m   [0;1mSELECT * FROM `outfits` ORDER BY id DESC LIMIT 3[0m
+Rendering template within layouts/app
+Rendering home/index
+  [4;35;1mOutfit Columns (0.001940)[0m   [0mSHOW FIELDS FROM `outfits`[0m
+  [4;36;1mPhoto Load (0.001568)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 13) LIMIT 1[0m
+  [4;35;1mPhoto Columns (0.002647)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (0.001362)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 12) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.000780)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.outfit_id = 11) LIMIT 1[0m
+Completed in 0.09493 (10 reqs/sec) | Rendering: 0.07760 (81%) | DB: 0.00917 (9%) | 200 OK [http://tableapp.dev/]
