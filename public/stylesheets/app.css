@@ -8,7 +8,7 @@ body { background-color: #523d2d; }
 
 
 #logo { width: 750px; margin: 0px auto; }
-
+#logo a { border: 0px;}
 #container {
 	width: 750px;
 	margin: 0px auto;
