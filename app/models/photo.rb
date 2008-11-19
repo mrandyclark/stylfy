@@ -7,6 +7,8 @@ class Photo < ActiveRecord::Base
                  
   validates_as_attachment
 
+#  validates_presence_of :photo
+  
   belongs_to :user
   belongs_to :outfit
   
