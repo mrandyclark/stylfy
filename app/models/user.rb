@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   include Authentication
   include Authentication::ByPassword
   include Authentication::ByCookieToken
-  
+    
   acts_as_voter
   
   validates_presence_of     :login

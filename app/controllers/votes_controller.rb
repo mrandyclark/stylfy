@@ -49,7 +49,7 @@ class VotesController < ApplicationController
     # POST /votes
     # POST /votes.xml
     def create
-      @vote = Vote.new(:vote => params[:vote])
+      @vote = Vote.new(params[:vote])
       @vote.user = current_user
 
       respond_to do |format|
