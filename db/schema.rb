@@ -9,13 +9,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081119150159) do
+ActiveRecord::Schema.define(:version => 20081119190359) do
 
   create_table "outfits", :force => true do |t|
     t.integer  "user_id"
     t.string   "description"
-    t.integer  "likes",       :default => 0
-    t.integer  "dislikes",    :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "featured",    :default => false
@@ -59,5 +57,18 @@ ActiveRecord::Schema.define(:version => 20081119150159) do
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
+
+  create_table "votes", :force => true do |t|
+    t.boolean  "vote",          :default => false
+    t.integer  "voteable_id",                      :null => false
+    t.string   "voteable_type",                    :null => false
+    t.integer  "voter_id"
+    t.string   "voter_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "votes", ["voter_id", "voter_type"], :name => "fk_voters"
+  add_index "votes", ["voteable_id", "voteable_type"], :name => "fk_voteables"
 
 end

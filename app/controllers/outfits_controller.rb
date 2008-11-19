@@ -96,15 +96,17 @@ class OutfitsController < ApplicationController
 
   def vote_for
     @outfit = Outfit.find(params[:id])
-    @outfit.vote_for
-    
+
+    current_user.vote_for(@outfit)    
+
     respond_to do |format|
       if @outfit.save
         flash[:notice] = 'Outfit was applauded.'
         format.html { redirect_to(@outfit) }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
+        flash[:notice] = 'It appears you already voted.'
+        format.html { render :action => "show" }
         format.xml  { render :xml => @outfit.errors, :status => :unprocessable_entity }
       end
     end
@@ -112,7 +114,8 @@ class OutfitsController < ApplicationController
   
   def vote_against
     @outfit = Outfit.find(params[:id])
-    @outfit.vote_against
+
+    current_user.vote_against(@outfit)        
     
     respond_to do |format|
       if @outfit.save
@@ -120,7 +123,8 @@ class OutfitsController < ApplicationController
         format.html { redirect_to(@outfit) }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
+        flash[:notice] = 'It appears you already voted.'
+        format.html { render :action => "show" }
         format.xml  { render :xml => @outfit.errors, :status => :unprocessable_entity }
       end
     end
