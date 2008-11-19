@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081117144845) do
+ActiveRecord::Schema.define(:version => 20081119150159) do
 
   create_table "outfits", :force => true do |t|
     t.integer  "user_id"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20081117144845) do
     t.integer  "dislikes",    :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "featured",    :default => false
   end
 
   create_table "photos", :force => true do |t|
@@ -41,7 +42,8 @@ ActiveRecord::Schema.define(:version => 20081117144845) do
   add_index "taggings", ["taggable_id", "taggable_type"], :name => "index_taggings_on_taggable_id_and_taggable_type"
 
   create_table "tags", :force => true do |t|
-    t.string "name"
+    t.string  "name"
+    t.boolean "featured", :default => false
   end
 
   create_table "users", :force => true do |t|
