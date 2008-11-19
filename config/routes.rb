@@ -13,7 +13,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :users do |user|
     user.resources :votes
-    user.resources :voteables do |mv|
+    user.resources :voteable do |mv|
       mv.resources :votes
     end
   end
