@@ -1,11 +1,7 @@
-require 'image_science'
-
-
 class Photo < ActiveRecord::Base
 
   has_attachment  :content_type => :image, 
                   :storage => :s3, 
-                  :processor => :ImageScience,
                   :max_size => 1.megabytes,
                   :thumbnails => { :thumbnail => '100x100>' }
                  

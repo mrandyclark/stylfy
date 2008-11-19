@@ -89,5 +89,37 @@ class OutfitsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def vote_for
+    @outfit = Outfit.find(params[:id])
+    @outfit.vote_for
+    
+    respond_to do |format|
+      if @outfit.save
+        flash[:notice] = 'Outfit was applauded.'
+        format.html { redirect_to(@outfit) }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @outfit.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+  
+  def vote_against
+    @outfit = Outfit.find(params[:id])
+    @outfit.vote_against
+    
+    respond_to do |format|
+      if @outfit.save
+        flash[:notice] = 'Outfit was discouraged.'
+        format.html { redirect_to(@outfit) }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @outfit.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
   
 end
