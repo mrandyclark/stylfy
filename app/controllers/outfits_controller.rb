@@ -1,8 +1,12 @@
 class OutfitsController < ApplicationController
   # GET /outfits
   # GET /outfits.xml
+
+  before_filter :login_required, :except => ["show"]
+
+
   def index
-    @outfits = Outfit.find(:all)
+    @outfits = current_user.outfits
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @outfits }
@@ -39,8 +43,8 @@ class OutfitsController < ApplicationController
   # POST /outfits
   # POST /outfits.xml
   def create
-    debugger
     @outfit = Outfit.new(params[:outfit])
+    @outfit.user = current_user
     
     @photo = Photo.new(params[:photo])
     @photo.outfit = @outfit

@@ -7,8 +7,11 @@ body { background-color: #523d2d; }
 
 h1, h2, h3, h4, h5, h6, p { margin-top: 0px;}
 
-#logo { width: 750px; margin: 0px auto; }
+#head { width: 750px; margin: 0px auto; height: 100px;}
+#logo { float: left;}
 #logo img { border: 0px;}
+#nav { float: right; color: #fff; margin: 75px 20px 0px 0px;}
+#nav a { color: #fff;}
 
 #container {
 	width: 750px;

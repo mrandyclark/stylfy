@@ -17,5 +17,9 @@ class Outfit < ActiveRecord::Base
   def style_rating
     return (self.likes - self.dislikes)
   end
+
+  def total_votes
+    return (self.likes + self.dislikes)
+  end
   
 end

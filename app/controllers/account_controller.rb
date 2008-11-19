@@ -1,6 +1,8 @@
 class AccountController < ApplicationController
 
-def index
-end
+  before_filter :login_required,
+
+  def index
+  end
 
 end

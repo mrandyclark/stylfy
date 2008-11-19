@@ -11,7 +11,18 @@
 </head>
 <body>
 
-	<div id="logo"><a href="/"><img src="/images/logo.png"></a></div>
+	<div id="head">
+		<div id="logo"><a href="/"><img src="/images/logo.png"></a></div>
+		<div id="nav">
+			<% if current_user %>
+				<a href="/logout">logout</a>
+			<% else %>
+				<a href="/login">login</a> or <a href="/signup">sign up</a>
+			<% end %>
+		</div
+	
+	</div>
+	
 	<div id="container">
 		<div id="container_top"></div>
 		<div id="container_mid">

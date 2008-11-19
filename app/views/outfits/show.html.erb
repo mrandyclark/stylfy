@@ -9,12 +9,12 @@
   <%=h @outfit.description %>
 </div>
 
+<div>
+	<b>Style Rating:</b>
+	<%= @outfit.style_rating %> (<%= @outfit.total_votes %> votes)
+</div>
 
 <div>
 	<%= link_to "vote for", :controller => "outfits", :action => "vote_for", :id => @outfit.id  %> |
 	<%= link_to "vote against", :controller => "outfits", :action => "vote_against", :id => @outfit.id  %>
 </div>
-
-
-<%= link_to 'Edit', edit_outfit_path(@outfit) %> |
-<%= link_to 'Back', outfits_path %>
