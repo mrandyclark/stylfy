@@ -8,12 +8,12 @@
     <%= voteable.user %>
 
 	<%= link_to_remote "Down",
-	:url => user_outfit_votes_path(voteable.user, voteable, :vote => :false, :format => :rjs),
+	:url => user_outfit_votes_path(voteable.user, voteable, {:vote => :false}),
 	:method => :post
  	%>
 	/
-	<%= link_to_remote "Down",
-	:url => user_outfit_votes_path(voteable.user, voteable, :vote => :false, :format => :rjs),
+	<%= link_to_remote "Up",
+	:url => user_outfit_votes_path(voteable.user, voteable, {:vote => :true }),
 	:method => :post
  	%> 
 
