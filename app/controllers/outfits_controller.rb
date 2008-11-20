@@ -104,10 +104,13 @@ class OutfitsController < ApplicationController
         flash[:notice] = 'Outfit was applauded.'
         format.html { redirect_to(@outfit) }
         format.xml  { head :ok }
+        # format.js {returns rjs to fill}
       else
         flash[:notice] = 'It appears you already voted.'
         format.html { render :action => "show" }
         format.xml  { render :xml => @outfit.errors, :status => :unprocessable_entity }
+        # format.js {returns rjs to fill}
+        
       end
     end
   end

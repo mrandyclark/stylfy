@@ -7,6 +7,10 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/', :controller => 'home', :action => 'index'
   map.connect '', :controller => 'home', :action => 'index'
 
+
+  map.resources :outfits, :member => { :vote_for => :post, :vote_against => :post }
+
+
   map.resources :photos
   map.resource :session
   map.resources :outfits
