@@ -5,17 +5,19 @@
 %>
 
 	<%= voteable.id %>
-    <%= voteable.user %>
+    <%= voteable.user_id %>
+    
+    <%= voteable.class %>
 
-	<%= link_to_remote "Down",
-	:url => user_outfit_votes_path(voteable.user, voteable, {:vote => :false}),
-	:method => :post
- 	%>
-	/
-	<%= link_to_remote "Up",
-	:url => user_outfit_votes_path(voteable.user, voteable, {:vote => :true }),
-	:method => :post
- 	%> 
+    <%= link_to_remote "Down",
+    :url => vote_against_outfit_path(@outfit),
+    :method => :post
+    %>
+    /
+    <%= link_to_remote "Up",
+    :url => vote_for_outfit_path(@outfit),
+    :method => :post
+    %>
 
 <% end %>
 

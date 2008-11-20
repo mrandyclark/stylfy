@@ -13,7 +13,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :photos
   map.resource :session
-  map.resources :outfits
+  map.resources :outfits,  :member => { :vote_for => :post, :vote_against => :post }
   
   map.resources :users do |user|
     user.resources :votes
