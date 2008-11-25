@@ -1,1 +1,0 @@
-page.replace_html "votes_#{@outfit.id}", :partial => "outfit_vote", :locals => {:voteable => @outfit}

@@ -1,7 +1,5 @@
 <div>
-	<% for photo in @outfit.photos -%>
-	  <%= link_to image_tag(photo.public_filename(:thumb)), photo.public_filename %>
-	<% end -%>
+	<%= image_tag @outfit.outfit_photo.url(:large) %>
 </div>
 
 <div>

@@ -5,12 +5,11 @@
 
 
   <%= f.error_messages %>
-  <%= error_messages_for :photo %>
 	
   <p>
-	<label>Photo</label><br />
-  	<%= file_field :photo, :uploaded_data %>
-  </p>
+    <%= f.label :outfit_photo %><br />
+	<%= f.file_field :outfit_photo %>
+	</p>
 
   <p>
     <%= f.label :description %><br />

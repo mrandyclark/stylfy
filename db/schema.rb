@@ -9,24 +9,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081119190359) do
+ActiveRecord::Schema.define(:version => 20081124223106) do
 
   create_table "outfits", :force => true do |t|
     t.integer  "user_id"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "featured",    :default => false
-  end
-
-  create_table "photos", :force => true do |t|
-    t.integer "outfit_id"
-    t.string  "content_type"
-    t.string  "filename"
-    t.string  "thumbnail"
-    t.integer "size"
-    t.integer "width"
-    t.integer "height"
+    t.boolean  "featured",                  :default => false
+    t.string   "outfit_photo_file_name"
+    t.string   "outfit_photo_content_type"
+    t.integer  "outfit_photo_file_size"
+    t.datetime "outfit_photo_updated_at"
+    t.datetime "outfit_photo_created_at"
   end
 
   create_table "taggings", :force => true do |t|

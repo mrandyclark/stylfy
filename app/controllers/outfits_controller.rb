@@ -28,7 +28,6 @@ class OutfitsController < ApplicationController
   # GET /outfits/new.xml
   def new
     @outfit = Outfit.new
-    @photo = Photo.new
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @outfit }
@@ -45,16 +44,14 @@ class OutfitsController < ApplicationController
   def create
     @outfit = Outfit.new(params[:outfit])
     @outfit.user = current_user
-    
-    @photo = Photo.new(params[:photo])
-    @photo.outfit = @outfit
+  
     
     if params[:tags][:tags]
       @outfit.tag_list.add(params[:tags][:tags].split(','))
     end
     
     respond_to do |format|
-      if @outfit.save && @photo.save
+      if @outfit.save
         flash[:notice] = 'Outfit was successfully created.'
         format.html { redirect_to(@outfit) }
         format.xml  { render :xml => @outfit, :status => :created, :location => @outfit }
