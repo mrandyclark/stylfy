@@ -9,12 +9,10 @@ class Outfit < ActiveRecord::Base
   named_scope :descending, :order => "created_at DESC"
 
   has_attached_file :outfit_photo,
-    :styles => { :tiny => "35x35", :preview => "175x175", :large => "300x300" }, 
+    :styles => { :tiny => "35x35", :preview => "175x175", :large => "300x300", :fz => "600x600" }, 
     :storage => :s3,
-    :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+    :s3_credentials => "#{RAILS_ROOT}/config/amazon_s3.yml",
     :path => ":attachment/:id/:style.:extension",
-    :bucket => 'stylfy_development'
-
-  
+      
 end
 

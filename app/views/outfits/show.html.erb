@@ -1,5 +1,11 @@
 <div>
-	<%= image_tag @outfit.outfit_photo.url(:large) %>
+	<a href="#photo_box" id="photo"><%= image_tag @outfit.outfit_photo.url(:large) %></a>
+	<div id="photo_box">
+	  <%= image_tag @outfit.outfit_photo.url(:fz) %>
+	</div>
+	<script type="text/javascript">
+		new FancyZoom('photo');
+	</script>	
 </div>
 
 <div>
