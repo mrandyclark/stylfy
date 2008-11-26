@@ -15,6 +15,11 @@ class Outfit < ActiveRecord::Base
     :path => ":attachment/:id/:style.:extension",
     :bucket => 'stylfy'
 
+
+  def self.latest_outfits
+    Outfit.find(:all, :order => 'id DESC', :limit => 3, :conditions => "flagged = false" ) 
+  end
+  
   
 end
 

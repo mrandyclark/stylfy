@@ -130,4 +130,23 @@ class OutfitsController < ApplicationController
     end
   end
   
+  def flag_outfit
+    @outfit = Outfit.find(params[:id])
+    
+    @outfit.flagged = true
+    @outfit.flagged_by = current_user.id
+    
+    respond_to do |format|
+      if @outfit.save
+        flash[:notice] = 'You\'ve flagged this outfit.  We will review it as soon as possible.'
+        format.html { redirect_to(:controller => "home") }
+        format.xml  { head :ok }
+      else
+        flash[:notice] = 'It appears we could not flag the outfit.'
+        format.html { redirect_to(@outfit) }
+        format.xml  { render :xml => @outfit.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+  
 end

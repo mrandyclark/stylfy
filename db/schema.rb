@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081124223106) do
+ActiveRecord::Schema.define(:version => 20081126004217) do
 
   create_table "outfits", :force => true do |t|
     t.integer  "user_id"
@@ -21,7 +21,8 @@ ActiveRecord::Schema.define(:version => 20081124223106) do
     t.string   "outfit_photo_content_type"
     t.integer  "outfit_photo_file_size"
     t.datetime "outfit_photo_updated_at"
-    t.datetime "outfit_photo_created_at"
+    t.boolean  "flagged"
+    t.integer  "flagged_by"
   end
 
   create_table "taggings", :force => true do |t|
