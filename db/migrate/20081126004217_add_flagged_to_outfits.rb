@@ -1,6 +1,6 @@
 class AddFlaggedToOutfits < ActiveRecord::Migration
   def self.up
-    add_column :outfits, :flagged, :boolean
+    add_column :outfits, :flagged, :boolean, :default => false
     add_column :outfits, :flagged_by, :integer
     remove_column :outfits, :outfit_photo_created_at
  

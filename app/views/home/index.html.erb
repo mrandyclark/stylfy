@@ -1,6 +1,6 @@
 <div id="latest">
 	<h3>the latest outfits:</h3>
-	<% for outfit in Outfit.latest_outfits %>
+	<% for outfit in Outfit.latest_outfits(3) %>
 		<%= link_to image_tag(outfit.outfit_photo.url), "outfits/#{outfit.id}" %>
 	<% end %>
 </div>
@@ -18,4 +18,7 @@
 	<% end %>
 </div>
 
+sub: <%= current_subdomain.nil? %>
+
 <div style="clear:both;"></div>
+

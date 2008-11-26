@@ -1,0 +1,12 @@
+<% for comment in @outfit.comments %>
+	<p><%= comment.user.login.humanize %> says, "<%= comment.comment %>"</p>
+<% end %>
+
+<% if current_user %>
+	<% form_tag({:controller => "outfits", :action => "add_comment", :outfit_id => outfit.id}, :multipart => true ) do %>
+		<%= text_field "comment", "comment", :size => "40" %>
+		<%= submit_tag "Add Comment" %>
+	<% end %>
+<% else %>
+	<a href="/login">login</a> to comment 
+<% end %>

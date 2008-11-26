@@ -16,8 +16,6 @@ set :copy_cache, true
 set :repository,  "git@github.com:mrandyclark/stylfy.git" 
 set :branch, "master"
 
-set :rails_env, :production
-
 set :chmod755, %w(app config db lib public vendor script tmp public/dispatch.cgi public/dispatch.fcgi public/dispatch.rb)
 set :use_sudo, false
 default_run_options[:pty] = true
@@ -38,6 +36,7 @@ namespace :deploy do
 		run "touch #{current_path}/tmp/restart.txt"
 	end
 end
+
 
 
 

@@ -17,8 +17,14 @@
   </p>
 
   <p>
-	<label>Tags (comma separated)</label><br />
-	<%= text_field :tags, :tags %>
+	<label>Tags</label><br />
+	<% for tag in Tag.find(:all )%>
+	<div>
+	  <%= check_box_tag "outfit[tag_ids][]", tag.id, @outfit.tags.include?(tag) %>
+	  <%= tag.name %>
+	</div>
+	<% end %>
+	Add your own (comma separated): <%= text_field :tags, :tags %>
   <p>
     <%= f.submit "Create" %>
   </p>

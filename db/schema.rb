@@ -9,7 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081126004217) do
+ActiveRecord::Schema.define(:version => 20081126022823) do
+
+  create_table "comments", :force => true do |t|
+    t.string   "title",            :limit => 50, :default => ""
+    t.text     "comment"
+    t.datetime "created_at",                                     :null => false
+    t.integer  "commentable_id",                 :default => 0,  :null => false
+    t.string   "commentable_type", :limit => 15, :default => "", :null => false
+    t.integer  "user_id",                        :default => 0,  :null => false
+  end
+
+  add_index "comments", ["user_id"], :name => "fk_comments_user"
 
   create_table "outfits", :force => true do |t|
     t.integer  "user_id"
@@ -21,7 +32,7 @@ ActiveRecord::Schema.define(:version => 20081126004217) do
     t.string   "outfit_photo_content_type"
     t.integer  "outfit_photo_file_size"
     t.datetime "outfit_photo_updated_at"
-    t.boolean  "flagged"
+    t.boolean  "flagged",                   :default => false
     t.integer  "flagged_by"
   end
 

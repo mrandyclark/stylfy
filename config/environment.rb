@@ -52,7 +52,8 @@ Rails::Initializer.run do |config|
     :secret      => '8861eef3db89c1ad565cd477c6109d5f06f417876c9a730e55f66952637576fa54016685aff7464f6d023c16a5be4881b6751555f716cb2f4dba12fa37b54622'
   }
 
-
+  config.gem 'mbleigh-subdomain-fu', :source => "http://gems.github.com/", :lib => "subdomain-fu"  
+  
   # Use the database for sessions instead of the cookie-based default,
   # which shouldn't be used to store highly confidential information
   # (create the session table with "rake db:sessions:create")
@@ -67,3 +68,16 @@ Rails::Initializer.run do |config|
   # config.active_record.observers = :cacher, :garbage_collector
 
 end
+
+# # These are the sizes of the domain (i.e. 0 for localhost, 1 for something.com)  
+ # # for each of your environments  
+ SubdomainFu.tld_sizes = { :development => 1,  
+                           :test => 0,  
+                           :production => 1 }  
+
+ # # These are the subdomains that will be equivalent to no subdomain  
+ SubdomainFu.mirrors = ["www"]  
+
+ # # This is the "preferred mirror" if you would rather show this subdomain  
+ # # in the URL than no subdomain at all.  
+ SubdomainFu.preferred_mirror = "www"

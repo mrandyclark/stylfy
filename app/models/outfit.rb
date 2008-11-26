@@ -1,7 +1,7 @@
 class Outfit < ActiveRecord::Base
 
   acts_as_taggable
-
+  acts_as_commentable
   acts_as_voteable
   
   belongs_to :user
@@ -16,8 +16,8 @@ class Outfit < ActiveRecord::Base
     :bucket => 'stylfy'
 
 
-  def self.latest_outfits
-    Outfit.find(:all, :order => 'id DESC', :limit => 3, :conditions => "flagged = false" ) 
+  def self.latest_outfits(x)
+    Outfit.find(:all, :order => 'id DESC', :limit => x, :conditions => "flagged = false" ) 
   end
   
   

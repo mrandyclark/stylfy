@@ -13,6 +13,11 @@
   <%=h @outfit.description %>
 </div>
 
+<div>
+	<b>Tagged</b>
+	<%= @outfit.tag_list %>
+</div>
+
 <div id="votes_<%= @outfit.id %>">
 	<%= render :partial => "votes/vote", :locals => {:voteable => @outfit} %>
 </div>
@@ -22,6 +27,9 @@
 	<%= link_to "flag this oufit", :action => "flag_outfit", :id => @outfit.id %>
 </div>
 
+<div>
+	<%= render :partial => "comments", :locals => {:outfit => @outfit }%>
+</div>
 
 <script type="text/javascript">
 	new FancyZoom('photo');

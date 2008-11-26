@@ -148,5 +148,17 @@ class OutfitsController < ApplicationController
       end
     end
   end
+
+  def add_comment
+    @outfit = Outfit.find(params[:outfit_id])
+    @comment = Comment.new(params[:comment])
+    @comment.user_id = current_user.id
+    @outfit.add_comment(@comment)
+    
+    if @comment.save && @outfit.save
+      redirect_to(@outfit)
+    end
+    
+  end
   
 end

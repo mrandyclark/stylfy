@@ -23,7 +23,9 @@ class Tag < ActiveRecord::Base
   def count
     read_attribute(:count).to_i
   end
-  
+
+
+
   class << self
     # Calculate the tag counts for all tags.
     #  :start_at - Restrict the tags to those created after a certain time
