@@ -15,6 +15,7 @@ class Outfit < ActiveRecord::Base
     :path => ":attachment/:id/:style.:extension",
     :bucket => 'stylfy'
 
+    attr_protected :outfit_photo_file_name, :outfit_photo_content_type, :outfit_photo_size
 
   def self.latest_outfits(x)
     Outfit.find(:all, :order => 'id DESC', :limit => x, :conditions => "flagged = false" ) 
