@@ -1,35 +1,43 @@
-<div>
-	<a href="#photo_box" id="photo">
-		<%= image_tag @outfit.outfit_photo.url(:large) %>
-	</a>
+<div id="outfit_photo">
+	<div>
+		<a href="#photo_box" id="photo">
+			<%= image_tag @outfit.outfit_photo.url(:large) %>
+		</a>
 	
-	<div id="photo_box">
-		<%= image_tag @outfit.outfit_photo.url(:fz) %>
+		<div id="photo_box">
+			<%= image_tag @outfit.outfit_photo.url(:fz) %>
+		</div>
+	</div>
+	
+	<div id="outfit_tools">
+	
+		<div id="votes_<%= @outfit.id %>">
+			<%= render :partial => "votes/vote", :locals => {:voteable => @outfit} %>
+		</div>
+
+
+		<div>
+			<%= link_to "flag", :action => "flag_outfit", :id => @outfit.id, :options => {:style => "accent"} %>
+			<%= link_to "this outfit", :action => "flag_outfit", :id => @outfit.id, :style => "plain" %>
+		</div>
+
 	</div>
 </div>
 
-<div>
-  <b>Description:</b>
-  <%=h @outfit.description %>
+<div id="outfit_about">
+	<div id="description">
+	  <%=h @outfit.description %>
+	</div>
+
+	<div id="tags">
+		<b>Tagged</b>: <%= @outfit.tag_list %>
+	</div>
+
+	<div id="comments">
+		<%= render :partial => "comments", :locals => {:outfit => @outfit }%>
+	</div>
 </div>
 
-<div>
-	<b>Tagged</b>
-	<%= @outfit.tag_list %>
-</div>
-
-<div id="votes_<%= @outfit.id %>">
-	<%= render :partial => "votes/vote", :locals => {:voteable => @outfit} %>
-</div>
-
-
-<div>
-	<%= link_to "flag this oufit", :action => "flag_outfit", :id => @outfit.id %>
-</div>
-
-<div>
-	<%= render :partial => "comments", :locals => {:outfit => @outfit }%>
-</div>
 
 <script type="text/javascript">
 	new FancyZoom('photo');

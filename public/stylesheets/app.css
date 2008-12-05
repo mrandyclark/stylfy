@@ -1,4 +1,5 @@
-body { background-color: #523d2d; }
+body { background-image: url('/images/bg.png'); margin: 0px;}
+
 
 #latest { float: left;}
 
@@ -7,28 +8,28 @@ body { background-color: #523d2d; }
 
 h1, h2, h3, h4, h5, h6, p { margin-top: 0px;}
 
-#head { width: 750px; margin: 0px auto; height: 100px;}
+#head { width: 900px; margin: 0px auto; height: 100px;}
 #logo { float: left;}
-#logo img { border: 0px;}
-#nav { float: right; color: #fff; margin: 75px 20px 0px 0px;}
+#logo img { border: 0px; margin: 35px 0px 0px 20px}
+#nav { float: right; color: #fff; margin: 0px 20px 0px 0px;}
 #nav a { color: #fff;}
 
 #container {
-	width: 750px;
+	width: 900px;
 	margin: 0px auto;
 }
 
 #container_top {
 	background-image:url('/images/rounded_top.png');
-	width: 750px;
-	height: 20px;
+	width: 900px;
+	height: 57px;
 	margin: 0px;
 }
 
 #container_bottom {
 	background-image:url('/images/rounded_bottom.png');
-	width: 750px;
-	height: 20px;
+	width: 900px;
+	height: 57px;
 	margin: 0px;}
 
 #container_mid {
@@ -36,3 +37,45 @@ h1, h2, h3, h4, h5, h6, p { margin-top: 0px;}
 	margin: 0px 0px 0px 0px;
 	padding: 0px 20px 20px 20px;
 }
+
+
+#toolbar {
+	height: 28px;
+	width: 200px;
+	float: right;
+	margin: 0px;
+}
+
+#toolbar_right {
+	background-image:url('/images/toolbar_right.png');
+	width: 14px;
+	height: 28px;
+	margin: 0px;
+	float: left;
+}
+
+#toolbar_left {
+	background-image:url('/images/toolbar_left.png');
+	width: 14px;
+	height: 28px;
+	margin: 0px;
+	float: left;
+}
+
+#toolbar_mid {
+	background-color: #fff;
+	height: 27px;
+	float: left;
+}
+
+
+
+
+#outfit_about { width: 480px; float: right}
+#outfit_photo { width: 375px; float: left;}
+#description { font-size: 24px; line-height: 26px; font-weight: bold;}
+#tags {margin-top: 100px;}
+#comments { margin-top: 100px;}
+
+#outfit_tools a { text-decoration: none; }
+#outfit_tools .accent { color: teal;}

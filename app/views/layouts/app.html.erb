@@ -13,12 +13,16 @@
 
 	<div id="head">
 		<div id="logo"><a href="/"><img src="/images/logo.png"></a></div>
-		<div id="nav">
+		<div id="toolbar">
+			<div id="toolbar_left"></div>
+			<div id="toolbar_mid">
 			<% if current_user %>
 				<a href="/outfits">my outfits</a> | <a href="/outfits/new">new outfit</a> | <a href="/logout">logout</a>
 			<% else %>
 				<a href="/login">login</a> or <a href="/signup">sign up</a>
 			<% end %>
+			</div>
+			<div id="toolbar_right"></div>
 		</div
 	
 	</div>
@@ -28,6 +32,7 @@
 		<div id="container_mid">
 			<div style="color: green"><%= flash[:notice] %></div>
 			<%= yield  %>
+			<div style="clear:both"></div>
 		</div>
 		<div id="container_bottom"></div>
 	</div>
