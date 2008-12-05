@@ -1,16 +1,16 @@
 development:
-    bucket_name: stylfy
+    bucket: stylfydev
     access_key_id: 024AWEEZE01KXYDT1PG2
     secret_access_key: VU6E/7mAHS7EVrE3wcRuWYAx5YTCgVBHw0LPcoX5  
 
 test:
-    bucket_name: stylfy
+    bucket: stylfytest
     access_key_id: 024AWEEZE01KXYDT1PG2
     secret_access_key: VU6E/7mAHS7EVrE3wcRuWYAx5YTCgVBHw0LPcoX5  
 
 
 production:
-    bucket_name: stylfy
+    bucket: stylfy
     access_key_id: 024AWEEZE01KXYDT1PG2
     secret_access_key: VU6E/7mAHS7EVrE3wcRuWYAx5YTCgVBHw0LPcoX5  
 

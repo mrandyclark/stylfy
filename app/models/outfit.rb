@@ -9,13 +9,14 @@ class Outfit < ActiveRecord::Base
   named_scope :descending, :order => "created_at DESC"
 
   has_attached_file :outfit_photo,
-                    :styles => { :large => "640x480>",
+                    :styles => { :large => "640x640>",
                                  :medium => "300x300>",
-                                 :thumb => "100x100>" },
+                                 :square => "150x150#" },
                     :storage => :s3,
-                    :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
-                    :bucket => 'stylfy'
-
+                    :s3_credentials => "#{RAILS_ROOT}/config/s3.yml"
+                    
+                    
+                    
   attr_protected :outfit_photo_file_name, :outfit_photo_content_type, :outfit_photo_size
 
   validates_attachment_presence :outfit_photo
