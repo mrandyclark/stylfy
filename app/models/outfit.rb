@@ -11,7 +11,7 @@ class Outfit < ActiveRecord::Base
   has_attached_file :outfit_photo,
                     :styles => { :large => "640x480>",
                                  :medium => "300x300>",
-                                 :thumb => "100x100>" }
+                                 :thumb => "100x100>" },
                     :storage => :s3,
                     :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
                     :bucket => 'stylfy'
