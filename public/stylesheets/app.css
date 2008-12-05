@@ -1,6 +1,6 @@
 body { background-image: url('/images/bg.png'); margin: 0px;}
 
-
+#tagline { font-size: 24px; line-height: 26px; font-weight: bold; text-align: center; margin: 0px 0px 20px 0px;}
 #latest { float: left;}
 
 #latest img { width: 125px; margin: 5px;}

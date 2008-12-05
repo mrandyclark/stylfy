@@ -12,9 +12,9 @@ class Outfit < ActiveRecord::Base
                     :styles => { :large => "640x640>",
                                  :medium => "300x300>",
                                  :square => "150x150#" },
+                    :path => ":attachment/:id/:style.:extension",
                     :storage => :s3,
-                    :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
-                    :path => ":attachment/:id/:style.:extension"
+                    :s3_credentials => "#{RAILS_ROOT}/config/s3.yml"
                     
                     
                     
