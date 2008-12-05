@@ -14,7 +14,7 @@ class Outfit < ActiveRecord::Base
                                  :square => "150x150#" },
                     :storage => :s3,
                     :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
-                    :path => ":attachment/:id/:style.:extension",
+                    :path => ":attachment/:id/:style.:extension"
                     
                     
                     
