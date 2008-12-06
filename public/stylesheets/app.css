@@ -1,9 +1,9 @@
 body { background-image: url('/images/bg.png'); margin: 0px;}
 
 #tagline { font-size: 24px; line-height: 26px; font-weight: bold; text-align: center; margin: 0px 0px 20px 0px;}
-#latest { float: left;}
+#latest { float: left; width: 525px;}
 
-#latest img { width: 125px; margin: 5px;}
+#latest img { width: 150px; margin: 5px;}
 #home_login { float: left; margin: 0px 0px 0px 30px;}
 
 h1, h2, h3, h4, h5, h6, p { margin-top: 0px;}
@@ -35,7 +35,8 @@ h1, h2, h3, h4, h5, h6, p { margin-top: 0px;}
 #container_mid {
 	background-color: #fff;
 	margin: 0px 0px 0px 0px;
-	padding: 0px 20px 20px 20px;
+	padding: 25px 20px 20px 20px;
+	min-height: 350px
 }
 
 
@@ -67,8 +68,14 @@ h1, h2, h3, h4, h5, h6, p { margin-top: 0px;}
 	float: left;
 }
 
-
-
+#flash_notice {
+	background-color:#409EDC;
+	color:#000000;
+	font-weight:bold;
+	margin:0 auto 20px;
+	padding:10px;
+	width:700px;
+}
 
 #outfit_about { width: 480px; float: right}
 #outfit_photo { width: 375px; float: left;}
@@ -78,3 +85,7 @@ h1, h2, h3, h4, h5, h6, p { margin-top: 0px;}
 
 #outfit_tools a { text-decoration: none; }
 #outfit_tools .accent { color: teal;}
+
+
+#footer { width: 900px; margin: 0px auto; height: 100px; text-align: center; color: #fff;}
+#footer a { color: #fff;}

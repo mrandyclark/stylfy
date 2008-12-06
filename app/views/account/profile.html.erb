@@ -1,1 +1,12 @@
-<%= @account.login %>'s Profile
+<% if @user.nil? %>
+	<div style="text-align: center"><h1>We're sorry, we couldn't find that user!</h1></div>
+	<div style="text-align: center">I'd expect we could put some more info here, like the latest outfits, a user search, sign up form, etc.</div>
+<% else %>
+	<h1><%= @user.login %></h1>
+	
+	<p>
+	<% for outfit in @user.outfits %>
+		<%= link_to image_tag(outfit.outfit_photo(:square)), "outfits/#{outfit.id}" %>
+	<% end %>
+	</p>
+<% end %>

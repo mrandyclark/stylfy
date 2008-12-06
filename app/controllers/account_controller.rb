@@ -6,8 +6,8 @@ class AccountController < ApplicationController
   end
   
   def profile
-    @account = User.find(:first, :conditions => ["login = ?", params[:account_name]])
+    @user = User.find(:first, :conditions => ["login = ?", params[:login]])
   end
-  
+
 
 end

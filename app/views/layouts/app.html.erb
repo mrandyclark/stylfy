@@ -23,21 +23,30 @@
 			<% end %>
 			</div>
 			<div id="toolbar_right"></div>
-		</div
+		</div>
 	
 	</div>
 	
 	<div id="container">
 		<div id="container_top"></div>
 		<div id="container_mid">
-			<div style="color: green"><%= flash[:notice] %></div>
+			<div style="clear:both"></div>
+			<% if flash[:notice] %><div id="flash_notice"><%= flash[:notice] %></div><% end %>
 			<%= yield  %>
 			<div style="clear:both"></div>
 		</div>
 		<div id="container_bottom"></div>
 	</div>
 	
-	
+	<div id="footer">
+		<a href="/account">account</a> |
+		<a href="/">home</a> |
+		<% if current_user %>
+			<a href="/outfits">my outfits</a> | <a href="/outfits/new">new outfit</a> | <a href="/logout">logout</a>
+		<% else %>
+			<a href="/login">login</a> or <a href="/signup">sign up</a>
+		<% end %>
+	</div>
 
 
 	<script type="text/javascript">
