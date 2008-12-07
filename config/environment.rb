@@ -55,10 +55,6 @@ Rails::Initializer.run do |config|
 
   config.gem 'mbleigh-subdomain-fu', :source => "http://gems.github.com/", :lib => "subdomain-fu"  
 
-  if RAILS_ENV == "production"
-    Paperclip.options[:image_magick_path] = "/usr/bin"
-  end
-    
   # Use the database for sessions instead of the cookie-based default,
   # which shouldn't be used to store highly confidential information
   # (create the session table with "rake db:sessions:create")
@@ -75,14 +71,14 @@ Rails::Initializer.run do |config|
 end
 
 # # These are the sizes of the domain (i.e. 0 for localhost, 1 for something.com)  
- # # for each of your environments  
- SubdomainFu.tld_sizes = { :development => 1,  
+# # for each of your environments  
+# # SubdomainFu.tld_sizes = { :development => 1,  
                            :test => 0,  
                            :production => 1 }  
 
- # # These are the subdomains that will be equivalent to no subdomain  
- SubdomainFu.mirrors = ["www"]  
+# # These are the subdomains that will be equivalent to no subdomain  
+# # SubdomainFu.mirrors = ["www"]  
 
- # # This is the "preferred mirror" if you would rather show this subdomain  
- # # in the URL than no subdomain at all.  
- SubdomainFu.preferred_mirror = "www"
+# # This is the "preferred mirror" if you would rather show this subdomain  
+# # in the URL than no subdomain at all.  
+# # SubdomainFu.preferred_mirror = "www"
