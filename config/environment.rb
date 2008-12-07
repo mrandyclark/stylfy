@@ -53,7 +53,13 @@ Rails::Initializer.run do |config|
   }
 
   config.gem 'mbleigh-subdomain-fu', :source => "http://gems.github.com/", :lib => "subdomain-fu"  
-  
+
+  if RAILS_ENV == "development"
+    Paperclip.options[:image_magick_path] = '/opt/local/bin/'
+  else
+    Paperclip.options[:image_magick_path] = '/usr/bin/'
+  end
+    
   # Use the database for sessions instead of the cookie-based default,
   # which shouldn't be used to store highly confidential information
   # (create the session table with "rake db:sessions:create")
