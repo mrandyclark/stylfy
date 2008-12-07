@@ -14,13 +14,6 @@
 		<div id="votes_<%= @outfit.id %>">
 			<%= render :partial => "votes/vote", :locals => {:voteable => @outfit} %>
 		</div>
-
-
-		<div>
-			<%= link_to "flag", :action => "flag_outfit", :id => @outfit.id, :options => {:style => "accent"} %>
-			<%= link_to "this outfit", :action => "flag_outfit", :id => @outfit.id, :style => "plain" %>
-		</div>
-
 	</div>
 </div>
 
