@@ -54,10 +54,8 @@ Rails::Initializer.run do |config|
 
   config.gem 'mbleigh-subdomain-fu', :source => "http://gems.github.com/", :lib => "subdomain-fu"  
 
-  if RAILS_ENV == "development"
-    Paperclip.options[:image_magick_path] = '/opt/local/bin/'
-  else
-    Paperclip.options[:image_magick_path] = '/usr/bin/'
+  if RAILS_ENV == "production"
+    Paperclip.options[:image_magick_path] = "/usr/bin"
   end
     
   # Use the database for sessions instead of the cookie-based default,
