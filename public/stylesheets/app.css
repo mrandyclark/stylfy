@@ -83,9 +83,17 @@ h1, h2, h3, h4, h5, h6, p { margin-top: 0px;}
 #tags {margin-top: 100px;}
 #comments { margin-top: 100px;}
 
-#outfit_tools a { text-decoration: none; }
-#outfit_tools .accent { color: teal;}
-
+#outfit_tools a { text-decoration: none; color: #333;}
+#outfit_tools .accent { color:#409EDC;  }
+#outfit_tools { font-size: 18px; line-height: 24px; font-weight: bold;}
 
 #footer { width: 900px; margin: 0px auto; height: 100px; text-align: center; color: #fff;}
 #footer a { color: #fff;}
+
+
+
+
+.css1 { font-size: 1.0em; }
+.css2 { font-size: 1.2em; }
+.css3 { font-size: 1.4em; }
+.css4 { font-size: 1.6em; }

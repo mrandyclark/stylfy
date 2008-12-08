@@ -4,6 +4,9 @@ ActionController::Routing::Routes.draw do |map|
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.login  '/login',  :controller => 'sessions', :action => 'new'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
+
+  map.tags '/tags/:tag_name', :controller => 'tags', :action => 'show'
+  
   
   map.resources :outfits, :member => { :vote_for => :post, :vote_against => :post }
 
@@ -23,7 +26,6 @@ ActionController::Routing::Routes.draw do |map|
   map.vote_for '/outfits/:id/vote_for', :controller => "outfits", :action => "vote_for"
   map.vote_against '/outfits/:id/vote_against', :controller => "outfits", :action => "vote_against"
   
-  map.profile '/:login', :controller => 'account', :action => 'profile'
   
   # The priority is based upon order of creation: first created -> highest priority.
 
@@ -66,4 +68,7 @@ ActionController::Routing::Routes.draw do |map|
   # consider removing the them or commenting them out if you're using named routes and resources.
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
+
+  map.profile '/:login', :controller => 'account', :action => 'profile'
+
 end

@@ -4,11 +4,11 @@
 	current_user.voted_on?(voteable)
 %>
 
-	<%= link_to "applaud this outfit", :action => "vote_for", :id => voteable.id %>
+	<%= link_to '<span class="accent">APPLAUD</span> THIS OUTFIT', :action => "vote_for", :id => voteable.id %>
     <br />
-	<%= link_to "reject this outfit", :action => "vote_against", :id => voteable.id %>
+	<%= link_to '<span class="accent">DISREGARD</span> THIS OUTFIT', :action => "vote_against", :id => voteable.id %>
 	<br />
-	<%= link_to "flag this outfit", :action => "flag_outfit", :id => voteable.id, :options => {:style => "accent"} %>
+	<%= link_to '<span class="accent">FLAG</span> THIS OUTFIT', :action => "flag_outfit", :id => voteable.id, :options => {:style => "accent"} %>
 <% end %>
 
 <p><b>Style Rating:</b> <%= voteable.votes_for - voteable.votes_against %> (<%= pluralize(voteable.votes.length, "vote") %>)</p>
