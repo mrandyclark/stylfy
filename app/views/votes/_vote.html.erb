@@ -11,6 +11,6 @@
 	<%= link_to "flag this outfit", :action => "flag_outfit", :id => voteable.id, :options => {:style => "accent"} %>
 <% end %>
 
-<p><b>Style Rating:</b> <%= voteable.votes_for - voteable.votes_against %> (<%= voteable.votes.length %> votes)</p>
+<p><b>Style Rating:</b> <%= voteable.votes_for - voteable.votes_against %> (<%= pluralize(voteable.votes.length, "vote") %>)</p>
 
 

@@ -2,7 +2,11 @@
 	<div style="text-align: center"><h1>We're sorry, we couldn't find that user!</h1></div>
 	<div style="text-align: center">I'd expect we could put some more info here, like the latest outfits, a user search, sign up form, etc.</div>
 <% else %>
-	<h1><%= @user.login %></h1>
+	<% if @user == current_user %>
+		<p>edit password | edit profile info</p>
+	<% end %>
+	
+	<h1><%= @user.login %>'s outfits</h1>
 	
 	<p>
 	<% for outfit in @user.outfits %>

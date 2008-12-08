@@ -7,10 +7,9 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :outfits, :member => { :vote_for => :post, :vote_against => :post }
 
-
+  
   map.resources :photos
   map.resource :session
-  map.resources :outfits,  :member => { :vote_for => :post, :vote_against => :post }
   
   map.resources :users do |user|
     user.resources :votes
@@ -19,8 +18,12 @@ ActionController::Routing::Routes.draw do |map|
     end
   end
 
+  map.connect '/account', :controller => 'account', :action => 'profile'
+  
+  map.vote_for '/outfits/:id/vote_for', :controller => "outfits", :action => "vote_for"
+  map.vote_against '/outfits/:id/vote_against', :controller => "outfits", :action => "vote_against"
+  
   map.profile '/:login', :controller => 'account', :action => 'profile'
-  map.connect '', :controller => 'home', :action => 'index'
   
   # The priority is based upon order of creation: first created -> highest priority.
 
@@ -54,7 +57,7 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  # map.root :controller => "welcome"
+  map.root :controller => "home", :action => 'index'
 
   # See how all your routes lay out with "rake routes"
 

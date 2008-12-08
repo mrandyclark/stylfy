@@ -18,7 +18,7 @@
 
   <p>
 	<label>Tags</label><br />
-	<% for tag in Tag.find(:all )%>
+	<% for tag in Tag.find(:all, :limit => 6 )%>
 	<div>
 	  <%= check_box_tag "outfit[tag_ids][]", tag.id, @outfit.tags.include?(tag) %>
 	  <%= tag.name %>

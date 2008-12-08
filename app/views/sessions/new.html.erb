@@ -1,9 +1,25 @@
+<style>
+.input_text {
+	font-size:32px;
+	font-weight:bold;
+	margin-bottom:15px;
+	width: 500px;
+}
+
+.submit_button {
+	font-size: 32px;
+}
+</style>
+
 <div id="login">
 	<h1>Log In</h1>
+	<p>(did you need to <a href="/signup">sign up</a>?)</p>
 	<% form_tag session_path do -%>
- 		<div id="login"><%= label_tag 'login' -%>: <%= text_field_tag 'login', @login -%></div>
-		<div id="password"><%= label_tag 'password' -%>: <%= password_field_tag 'password', nil -%></div>
-		<div id="submit"><%= submit_tag 'Log in' %></div>
+ 		<div id="login"><%= label_tag 'login' -%>:
+		<br /><%= text_field_tag 'login', @login, :class => "input_text" -%></div>
+		<div id="password"><%= label_tag 'password' -%>:
+		<br /><%= password_field_tag 'password', nil, :class => "input_text"  -%></div>
+		<div id="submit"><%= submit_tag 'Log in', :class => "submit_button" %></div>
 	<% end -%>
 </div>
 <br />

@@ -2,29 +2,56 @@
        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-  <title>The page you were looking for doesn't exist (404)</title>
-	<style type="text/css">
-		body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
-		div.dialog {
-			width: 25em;
-			padding: 0 4em;
-			margin: 4em auto 0 auto;
-			border: 1px solid #ccc;
-			border-right-color: #999;
-			border-bottom-color: #999;
-		}
-		h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
-	</style>
-</head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Stylfy</title>
+  <%= javascript_include_tag :defaults, "fancyzoom" %>
+  <%= stylesheet_link_tag 'scaffold', 'app' %>
 
+</head>
 <body>
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <h1>The page you were looking for doesn't exist.</h1>
-    <p>You may have mistyped the address or the page may have moved.</p>
-  </div>
+
+	<div id="head">
+		<div id="logo"><a href="/"><img src="/images/logo.png"></a></div>
+		<div id="toolbar">
+			<div id="toolbar_left"></div>
+			<div id="toolbar_mid">
+			<% if current_user %>
+				<a href="/outfits">my outfits</a> | <a href="/outfits/new">new outfit</a> | <a href="/logout">logout</a>
+			<% else %>
+				<a href="/login">login</a> or <a href="/signup">sign up</a>
+			<% end %>
+			</div>
+			<div id="toolbar_right"></div>
+		</div>
+	
+	</div>
+	
+	<div id="container">
+		<div id="container_top"></div>
+		<div id="container_mid">
+			<div style="clear:both"></div>
+			<% if flash[:notice] %><div id="flash_notice"><%= flash[:notice] %></div><% end %>
+			<h1>Eeeeesh.  Looks like we couldn't find what you were looking for.</h1>
+			
+			<% for outfit in Outfit.latest_outfits(5) %>
+				<%= link_to image_tag(outfit.outfit_photo(:square)), "outfits/#{outfit.id}" %>
+			<% end %>
+			<div style="clear:both"></div>
+		</div>
+		<div id="container_bottom"></div>
+	</div>
+	
+	<div id="footer">
+		<a href="/">home</a> |
+		<% if current_user %>
+		<a href="/<%= current_user.login %>">account</a> | <a href="/outfits">my outfits</a> | <a href="/outfits/new">new outfit</a> | <a href="/logout">logout</a>
+		<% else %>
+			<a href="/login">login</a> or <a href="/signup">sign up</a>
+		<% end %>
+	</div>
 </body>
 </html>
+
+
+

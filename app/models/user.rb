@@ -33,6 +33,16 @@ class User < ActiveRecord::Base
   has_many :photos
   has_many :comments
   
+  def style_rating
+    total_ratings = 0
+    for outfit in self.outfits
+      total_ratings = total_ratings + outfit.votes_for - outfit.votes_against
+    end
+    
+    return total_ratings
+
+  end
+  
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
   #
   # uff.  this is really an authorization, not authentication routine.  
