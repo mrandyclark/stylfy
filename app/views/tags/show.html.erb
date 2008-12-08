@@ -1,7 +1,7 @@
 <% if @outfits.length > 0 %>
 	<h1>Outfits tagged with "<%= @tag %>"</h1>
 	<% for outfit in @outfits %>
-		<%= link_to image_tag(outfit.outfit_photo(:square)), "outfits/#{outfit.id}" %>
+		<%= link_to image_tag(outfit.outfit_photo(:square)), "/outfits/#{outfit.id}" %>
 	<% end %>
 <% else %>
 	<h1>We couldn't find any outfits tagged "<%= @tag %>"</h1>

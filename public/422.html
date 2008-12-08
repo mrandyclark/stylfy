@@ -35,7 +35,7 @@
 			<h1>Eeeeesh.  Looks like we couldn't make that change for you.</h1>
 			
 			<% for outfit in Outfit.latest_outfits(5) %>
-				<%= link_to image_tag(outfit.outfit_photo(:square)), "outfits/#{outfit.id}" %>
+				<%= link_to image_tag(outfit.outfit_photo(:square)), "/outfits/#{outfit.id}" %>
 			<% end %>
 			<div style="clear:both"></div>
 		</div>
