@@ -10,6 +10,7 @@
 	</div>
 	
 	<div id="outfit_tools">
+	  
 		<div id="votes_<%= @outfit.id %>">
 			<%= render :partial => "votes/vote", :locals => {:voteable => @outfit} %>
 		</div>
@@ -21,9 +22,19 @@
 	  <%=h @outfit.description %>
 	</div>
 
-	<div id="tags">
-		<b>Tagged</b>: <%= @outfit.tag_list %>
+	<div id="user">	
+		<p>by <a href="/<%= @outfit.user.login %>"><%= @outfit.user.login %></a></p>
 	</div>
+	
+	<div id="tags">
+		<% if @outfit.tags.length > 0 %>
+		<b>Tagged</b>: 
+			<% for tag in @outfit.tags %>
+				<a href="/tags/<%= tag.name %>"><%= tag.name %></a>
+			<% end %>
+		<% end %>
+	</div>
+	
 
 	<div id="comments">
 		<%= render :partial => "comments", :locals => {:outfit => @outfit }%>
