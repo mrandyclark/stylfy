@@ -1,10 +1,10 @@
 body { background-image: url('/images/bg.png'); margin: 0px;}
 
-#tagline { font-size: 24px; line-height: 26px; font-weight: bold; text-align: center; margin: 0px 0px 20px 0px;}
+#tagline { font-size: 24px; line-height: 26px; font-weight: bold; text-align: center; margin: 0px 0px 30px 0px;}
 #latest { float: left; width: 525px;}
 
 #latest img { width: 150px; margin: 5px;}
-#home_login { float: left; margin: 0px 0px 0px 30px;}
+#home_login { float: left; width: 250px; margin: 0px 0px 0px 30px;}
 
 h1, h2, h3, h4, h5, h6, p { margin-top: 0px;}
 
