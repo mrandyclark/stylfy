@@ -14,6 +14,8 @@
 		<div id="votes_<%= @outfit.id %>">
 			<%= render :partial => "votes/vote", :locals => {:voteable => @outfit} %>
 		</div>
+		
+		<%= @outfit.style_rating %>
 	</div>
 </div>
 

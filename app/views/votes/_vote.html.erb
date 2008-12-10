@@ -10,13 +10,6 @@
 	<br />
 	<%= link_to '<span class="accent">FLAG</span> THIS OUTFIT', :action => "flag_outfit", :id => voteable.id, :options => {:style => "accent"} %>
 <% end %>
-
-<p><b>Style Rating:</b>
-	<% if voteable.votes.length > 0 %>
-	<%= ((voteable.votes_for.to_f / voteable.votes.length.to_f) * 100).to_i %>% (<%= pluralize(voteable.votes.length, "vote") %>)
-	<% else %>
-	No votes yet.
-	<% end %>
 </p>
 
 

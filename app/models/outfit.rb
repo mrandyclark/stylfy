@@ -28,6 +28,15 @@ class Outfit < ActiveRecord::Base
     Outfit.find(:all, :order => 'id DESC', :limit => x, :conditions => "flagged = false" ) 
   end
   
+  def style_rating
+    if self.votes.length > 0
+  	  return "Style Rating: #{ ((self.votes_for.to_f / self.votes.length.to_f) * 100).to_i }% (#{self.votes.length} votes)"
+	  else
+	    return "There are no votes for this outfit yet."
+	  end
+	  
+  end
+  
   
 end
 
