@@ -1,7 +1,10 @@
-<h1>My outfits</h1>
+<style>
+	#all_outfits { text-align: center;}
+</style>
 
-<% for outfit in @outfits %>
-	<%= link_to image_tag(outfit.outfit_photo(:square)), "outfits/#{outfit.id}" %>
-<% end %>
+<div id="all_outfits">
+	<% for outfit in @outfits %>
+		<%= link_to image_tag(outfit.outfit_photo(:square)), "outfits/#{outfit.id}" %>
+	<% end %>
+</div>
 
-<p><%= link_to 'New outfit', new_outfit_path %></p>

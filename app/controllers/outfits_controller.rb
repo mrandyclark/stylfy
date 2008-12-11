@@ -2,11 +2,16 @@ class OutfitsController < ApplicationController
   # GET /outfits
   # GET /outfits.xml
 
-  before_filter :login_required, :except => ["show"]
+  before_filter :login_required, :except => ["show", "index"]
 
 
   def index
-    @outfits = current_user.outfits
+    @outfits = Outfit.find(:all, :limit => 25)
+    
+    if current_user
+      @user_outfits = current_user.outfits
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @outfits }
