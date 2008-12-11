@@ -6,7 +6,7 @@ class OutfitsController < ApplicationController
 
 
   def index
-    @outfits = Outfit.find(:all, :limit => 25)
+    @outfits = Outfit.find(:all, :limit => 25, :order => "created_at DESC")
     
     if current_user
       @user_outfits = current_user.outfits
