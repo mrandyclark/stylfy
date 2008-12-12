@@ -99,7 +99,7 @@ a img { border: 4px solid #654e3b;}
 
 
 
-#comments { float: left; clear: both;}
+#comments { float: left; clear: both; margin: 75px 0px 0px 0px;}
 #new_comment { float: left; clear: both; margin: 25px 0px 0px 0px;}
 
 
@@ -109,7 +109,7 @@ a img { border: 4px solid #654e3b;}
 
 .comment {
 	width: 500px;
-	margin: 75px auto 0px auto;
+	margin: 10px auto 0px auto;
 	float: left;
 	clear: both;
 	 color: #fff;

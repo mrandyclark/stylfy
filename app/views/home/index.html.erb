@@ -12,9 +12,7 @@
 <div id="home_login">
 	<p>Stylfy lets you post photos of your outfits for others to see and vote on.  No longer do you need to ask the question, "how do I look today?"</p>
 	<% if current_user %>
-		Hi.
-		<a href="/account">my account</a><br />
-		<a href="/outfits">my outfits</a><br />
+		<a href="/<%= current_user.login %>">my profile</a><br />
 		<a href="/outfits/new">new outfit</a><br />
 		<a href="/logout">logout</a><br />
 	<% else  %>
