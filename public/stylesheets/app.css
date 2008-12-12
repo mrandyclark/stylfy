@@ -168,3 +168,25 @@ a img { border: 4px solid #654e3b;}
 }
 
 #new_comment_mid input {font-size: 12px;}
+
+
+
+#home_action { 
+	text-align:center;
+}
+
+#home_action a {
+	color: #409edc; font-size: 28px; line-height: 35px; font-weight: bold; text-decoration: none;
+}
+
+label {font-weight: bold;}
+.input_text {
+	font-size:32px;
+	font-weight:bold;
+	margin-bottom:15px;
+	width: 500px;
+}
+
+.submit_button {
+	font-size: 32px;
+}

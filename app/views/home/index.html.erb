@@ -1,3 +1,4 @@
+
 <div id="tagline">
 	Stylfy is a photographic journal of your personal style.
 </div>
@@ -10,15 +11,18 @@
 </div>
 
 <div id="home_login">
-	<p>Stylfy lets you post photos of your outfits for others to see and vote on.  No longer do you need to ask the question, "how do I look today?"</p>
+	<p>Stylfy lets you post photos of your personal style for the community to comment and vote on.  The question is, "how do <strong>you</strong> look today?"</p>
+	
+	<div id="home_action">
 	<% if current_user %>
 		<a href="/<%= current_user.login %>">my profile</a><br />
 		<a href="/outfits/new">new outfit</a><br />
 		<a href="/logout">logout</a><br />
 	<% else  %>
-		<p>already have an account?  Please <a href="/login">login</a></p>
-		<p>need an account? <a href="/signup">Signup!</a></p>
+		<p><a href="/login" class="home_login">login</a></p>
+		<p><a href="/signup" class="home_signup">signup</a></p>
 	<% end %>
+	</div>
 </div>
 
 <div style="clear:both;"></div>
