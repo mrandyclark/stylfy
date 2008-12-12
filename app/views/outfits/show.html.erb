@@ -1,11 +1,11 @@
 <div id="outfit_photo">
 	<div>
 		<a href="#photo_box" id="photo">
-			<%= image_tag @outfit.outfit_photo.url(:medium) %>
+			<%= image_tag @outfit.outfit_photo.url(:medium), :alt => "#{@outfit.description} by #{@outfit.user.login}" %>
 		</a>
 	
 		<div id="photo_box">
-			<%= image_tag @outfit.outfit_photo.url(:large) %>
+			<%= image_tag @outfit.outfit_photo.url(:large), :alt => "#{@outfit.description} by #{@outfit.user.login}" %>
 		</div>
 	</div>
 	

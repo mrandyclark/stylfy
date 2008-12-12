@@ -11,7 +11,7 @@
 <% end %>
 
 <% if current_user %>
-	<%= link_to '<span class="accent">FLAG</span> AS INAPPROPRIATE', :action => "flag_outfit", :id => voteable.id, :options => {:style => "accent"} %>
+	<%= link_to '<span class="accent">FLAG</span> AS INAPPROPRIATE', :action => "flag_outfit", :id => voteable.id %>
 <% end %>
 </p>
 
