@@ -77,8 +77,8 @@ h1, h2, h3, h4, h5, h6, p { margin-top: 0px;}
 	width:700px;
 }
 
-#outfit_about { width: 480px; float: right}
-#outfit_photo { width: 375px; float: left;}
+#outfit_about { width: 500px; float: left;}
+#outfit_photo { width: 360px; float: left;}
 #description { font-size: 24px; line-height: 26px; font-weight: bold;}
 #tags {margin-top: 100px;}
 #comments { margin-top: 100px;}
@@ -97,3 +97,75 @@ a img { border: 4px solid #654e3b;}
 .css2 { font-size: 1.2em; }
 .css3 { font-size: 1.4em; }
 .css4 { font-size: 1.6em; }
+
+
+
+#comments { float: left; clear: both;}
+#new_comment { float: left; clear: both; margin: 25px 0px 0px 0px;}
+
+
+
+
+
+
+.comment {
+	width: 500px;
+	margin: 0px auto;
+	float: left;
+	clear: both;
+	 color: #fff;
+}
+
+.comment a { color: #409edc; text-decoration: none;}
+
+.comment_top {
+	background-image:url('/images/comment_top.png');
+	width: 500px;
+	height: 11px;
+	margin: 0px;
+}
+
+.comment_bottom {
+	background-image:url('/images/comment_bottom.png');
+	width: 500px;
+	height: 11px;
+	margin: 0px;}
+
+.comment_mid {
+	background-color: #654e3b;
+	margin: 0px 0px 0px 0px;
+	padding: 5px;
+}
+
+.comment_content { font-size: 18px;}
+
+#new_comment {
+	width: 500px;
+	margin: 15px auto;
+	float: left;
+	clear: both;
+	 color: #fff;
+}
+
+#new_comment a { color: #fff;}
+
+#new_comment_top {
+	background-image:url('/images/new_comment_top.png');
+	width: 500px;
+	height: 11px;
+	margin: 0px;
+}
+
+#new_comment_bottom {
+	background-image:url('/images/new_comment_bottom.png');
+	width: 500px;
+	height: 11px;
+	margin: 0px;}
+
+#new_comment_mid {
+	background-color: #409edc;
+	margin: 0px 0px 0px 0px;
+	padding: 5px;
+}
+
+#new_comment_mid input {font-size: 12px;}
