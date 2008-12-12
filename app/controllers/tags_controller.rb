@@ -1,8 +1,7 @@
 class TagsController < ApplicationController
 
   def index
-    @tags = Outfit.tag_counts
-    
+    @tags = Outfit.tag_counts(:order_by => "name")   
   end
   
   def show
