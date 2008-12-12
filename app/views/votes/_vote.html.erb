@@ -6,10 +6,13 @@
 
 	<%= link_to '<span class="accent">APPLAUD</span> THIS OUTFIT', :action => "vote_for", :id => voteable.id %>
     <br />
-	<%= link_to '<span class="accent">DISREGARD</span> THIS OUTFIT', :action => "vote_against", :id => voteable.id %>
+	<%= link_to '<span class="accent">DISAPPROVE</span> THIS OUTFIT', :action => "vote_against", :id => voteable.id %>
 	<br />
 <% end %>
-	<%= link_to '<span class="accent">FLAG</span> THIS OUTFIT', :action => "flag_outfit", :id => voteable.id, :options => {:style => "accent"} %>
+
+<% if current_user %>
+	<%= link_to '<span class="accent">FLAG</span> AS INAPPROPRIATE', :action => "flag_outfit", :id => voteable.id, :options => {:style => "accent"} %>
+<% end %>
 </p>
 
 
