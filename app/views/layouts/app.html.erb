@@ -21,7 +21,7 @@
 			<div id="toolbar_left"></div>
 			<div id="toolbar_mid">
 			<% if current_user %>
-				<a href="/outfits">my outfits</a> | <a href="/outfits/new">new outfit</a> | <a href="/logout">logout</a>
+				<a href="/<%= current_user.login %>">my outfits</a> | <a href="/outfits/new">new outfit</a> | <a href="/logout">logout</a>
 			<% else %>
 				<a href="/login">login</a> or <a href="/signup">sign up</a>
 			<% end %>
