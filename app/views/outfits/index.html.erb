@@ -6,5 +6,6 @@
 	<% for outfit in @outfits %>
 		<%= link_to image_tag(outfit.outfit_photo(:square)), "outfits/#{outfit.id}" %>
 	<% end %>
+	
+	<%= will_paginate @outfits %>
 </div>
-

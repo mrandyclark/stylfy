@@ -6,7 +6,9 @@ class OutfitsController < ApplicationController
 
 
   def index
-    @outfits = Outfit.find(:all, :limit => 25, :order => "created_at DESC")
+    @outfits = Outfit.paginate :per_page => 25, :page => params[:page], :order => "created_at DESC"
+
+
     
     if current_user
       @user_outfits = current_user.outfits
