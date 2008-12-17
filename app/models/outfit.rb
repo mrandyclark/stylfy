@@ -24,6 +24,8 @@ class Outfit < ActiveRecord::Base
   validates_attachment_size :outfit_photo, :less_than => 1.megabytes
   validates_attachment_content_type :outfit_photo, :content_type => ['image/jpeg', 'image/png']
   
+  validates_presence_of :description
+  
   def self.latest_outfits(x)
     Outfit.find(:all, :order => 'id DESC', :limit => x, :conditions => "flagged = false" ) 
   end
