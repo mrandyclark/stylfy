@@ -103,3 +103,12 @@ label { font-weight: bold;}
 .form_field { margin: 25px 0px;}
 
 .form_field input {font-size: 18px;}
+
+
+
+
+#outfit_nav { margin-top: 100px; width: 300px; text-align: center;}
+#outfit_nav a {color:#409EDC;}
+#outfit_nav_links { width: 225px; margin: 0px auto; clear: both;}
+#outfit_nav_prev { text-align: center; color:#409EDC; float: left;}
+#outfit_nav_next {  text-align: center; color:#409EDC; float: right;}

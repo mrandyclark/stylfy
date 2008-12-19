@@ -16,6 +16,31 @@
 		</div>
 		
 		<%= @outfit.style_rating %>
+		
+		<div id="outfit_nav">
+			<h3>View Other Outfits</h3>
+			
+			<div id="outfit_nav_links">
+				<div id="outfit_nav_prev">
+				<% if @outfit.find_prev %>
+					<%= link_to (image_tag @outfit.find_prev.outfit_photo.url(:square), :alt => "#{@outfit.find_prev.description} by #{@outfit.find_prev.user.login}", :width => "100px", :height => "100px"), @outfit.find_prev %>
+					<p><%= link_to "Previous", @outfit.find_prev %>	</p>
+				<% else %>
+					<%= image_tag "no_more_outfits.png"%>
+				<% end %>
+				</div>
+			
+				<div id="outfit_nav_next">
+				<% if @outfit.find_next %>
+					<%= link_to (image_tag @outfit.find_next.outfit_photo.url(:square), :alt => "#{@outfit.find_next.description} by #{@outfit.find_next.user.login}", :width => "100px", :height => "100px"), @outfit.find_next %>
+					<p><%= link_to "Next", @outfit.find_next %>	</p>
+				<% else %>
+					<%= image_tag "no_more_outfits.png"%>
+				<% end %>
+				</div>
+			</div>
+			<div style="clear:both"><p><%= link_to "View All Outfifts", :controller => "outfits" %></p></div>			
+		</div>
 	</div>
 	
 	<div>

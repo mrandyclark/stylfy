@@ -3,6 +3,7 @@ class Outfit < ActiveRecord::Base
   acts_as_taggable
   acts_as_commentable
   acts_as_voteable
+  acts_as_ordered
   
   belongs_to :user
 
@@ -11,7 +12,8 @@ class Outfit < ActiveRecord::Base
   has_attached_file :outfit_photo,
                     :styles => { :large => "640x640>",
                                  :medium => "300x300>",
-                                 :square => "150x150#" },
+                                 :square => "150x150#",
+                                 :thumb => "75x75#" },
                     :path => ":attachment/:id/:style.:extension",
                     :storage => :s3,
                     :s3_credentials => "#{RAILS_ROOT}/config/s3.yml"
@@ -36,9 +38,7 @@ class Outfit < ActiveRecord::Base
 	  else
 	    return "There are no votes for this outfit yet."
 	  end
-	  
   end
-  
   
 end
 
