@@ -10,8 +10,8 @@ set :user, "deploy"
 set :deploy_to, "/home/andy/apps/#{application}"
 
 set :scm, "git"
-#set :deploy_via, :copy
-set :deploy_via, :remote_cache
+set :deploy_via, :copy
+#set :deploy_via, :remote_cache
 set :copy_cache, true
 set :repository,  "git@github.com:mrandyclark/stylfy.git" 
 set :branch, "master"
