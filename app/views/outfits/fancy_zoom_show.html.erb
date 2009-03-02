@@ -1,6 +1,14 @@
 <div id="outfit_photo">
 	<div>
-		<%= image_tag @outfit.outfit_photo.url(:medium), :alt => "#{@outfit.description} by #{@outfit.user.login}" %>
+		<a href="#photo_box" id="photo">
+			<%= image_tag @outfit.outfit_photo.url(:medium), :alt => "#{@outfit.description} by #{@outfit.user.login}" %>
+		</a>
+	
+		<div id="photo_box">
+			<%= image_tag @outfit.outfit_photo.url(:large), :alt => "#{@outfit.description} by #{@outfit.user.login}" %>
+		</div>
+		
+		<p>we've removed some fancy javascript that causes IE to crash.</p>
 	</div>
 	
 	<div id="outfit_tools">
