@@ -21,4 +21,17 @@ class UsersController < ApplicationController
       render :action => 'new'
     end
   end
+  
+  def add_comment
+    @user = User.find(params[:user_id])
+    @comment = Comment.new(params[:comment])
+    @comment.user_id = current_user.id
+    @user.add_comment(@comment)
+    
+    if @comment.save && @user.save
+      redirect_to(@user)
+    end
+    
+  end
+  
 end

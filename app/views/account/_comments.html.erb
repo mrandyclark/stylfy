@@ -1,0 +1,28 @@
+<% for comment in @user.comments %>
+<div class="comment">
+	<div class="comment_top"></div>
+	<div class="comment_mid">
+		<div class="comment_author"><%= link_to comment.user.login.humanize, :controller => "account", :action => "profile", :login => comment.user.login %> says,</div>
+		<div class="comment_content">"<%= comment.comment %>"</div>
+	</div>
+	<div class="comment_bottom"></div>
+</div>
+<% end %>
+
+<div id="new_comment">
+	<div id="new_comment_top"></div>
+	<div id="new_comment_mid">
+	<% if current_user %>
+		<% form_tag({:controller => "user", :action => "add_comment", :user_id => @user.id}, :multipart => true ) do %>
+			<%= text_field "comment", "comment", :size => "40" %>
+			<%= submit_tag "Add Comment" %>
+		<% end %>
+	<% else %>
+		<a href="/login">login</a> to comment 
+	<% end %>
+	</div>
+	<div id="new_comment_bottom"></div>
+</div>
+
+
+

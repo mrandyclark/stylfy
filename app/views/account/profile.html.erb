@@ -1,3 +1,11 @@
+<style>
+
+#last_outfit { margin: 0px 25px 25px 0px; float: left; }
+#user_info { float: left;}
+#user_outfits { float: left; margin: 25px 0px 0px 0px;}
+</style>
+
+
 <% if @user.nil? %>
 	<div style="text-align: center"><h1>We're sorry, we couldn't find that user!</h1></div>
 	<div style="text-align: center; width: 525px; margin: 0px auto;">
@@ -10,11 +18,25 @@
 		<!-- <p>edit password | edit profile info</p> -->
 	<% end %>
 	
-	<h1><%= @user.login %>'s outfits</h1>
 	
-	<p>
-	<% for outfit in @user.outfits %>
-		<%= link_to image_tag(outfit.outfit_photo(:square), :alt => "#{outfit.user.login} on stylfy"), "outfits/#{outfit.id}" %>
-	<% end %>
-	</p>
+	
+	<div id="last_outfit">
+		<%= link_to image_tag(@user.outfits.last.outfit_photo(:medium) , :alt => "#{@user.login} on stylfy"), "outfits/#{@user.outfits.last.id}" %>
+	</div>
+
+	<div id="user_info">
+		
+		<h1><%= @user.login %></h1>
+		
+		<% if current_user %>
+			<%= link_to "follow", :action => "follow_user", :user => current_user.id, :following => @user.id %></a>
+		<% end %>
+		
+		<div id="user_outfits">
+			<% for outfit in @user.outfits.latest_outfits(3) %>
+				<%= link_to image_tag(outfit.outfit_photo(:square), :alt => "#{outfit.user.login} on stylfy"), "outfits/#{outfit.id}" %>
+			<% end %>
+
+		</div>
+	</div>
 <% end %>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081126022823) do
+ActiveRecord::Schema.define(:version => 20090309155059) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(:version => 20081126022823) do
   end
 
   add_index "comments", ["user_id"], :name => "fk_comments_user"
+
+  create_table "followers", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "follows_user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "outfits", :force => true do |t|
     t.integer  "user_id"

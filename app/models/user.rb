@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
     
   acts_as_voter
   
+  # acts_as_commentable
+  
   validates_presence_of     :login
   validates_length_of       :login,    :within => 3..40
   validates_uniqueness_of   :login
@@ -29,6 +31,8 @@ class User < ActiveRecord::Base
 
 
   # users need photos and outfits.
+  has_many :followers
+  
   has_many :outfits
   has_many :photos
   has_many :comments

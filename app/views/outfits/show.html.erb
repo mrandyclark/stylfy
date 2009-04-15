@@ -1,6 +1,12 @@
+
+
 <div id="outfit_photo">
 	<div>
-		<%= image_tag @outfit.outfit_photo.url(:medium), :alt => "#{@outfit.description} by #{@outfit.user.login}" %>
+		
+		<a href="<%= @outfit.outfit_photo.url(:large) %>" rel="lightbox[outfit]" title="<%= @outfit.description %> by <%= @outfit.user.login %>">
+			<%= image_tag @outfit.outfit_photo.url(:medium), :alt => "#{@outfit.description} by #{@outfit.user.login}" %>
+		</a>		
+			
 	</div>
 	
 	<div id="outfit_tools">
